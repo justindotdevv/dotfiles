@@ -45,5 +45,5 @@ else # Updates available (exit_code is 0)
 fi
 
 # Trigger waybar module refresh
-pkill -RTMIN+9 waybar
+# pkill -RTMIN+9 waybar
 
