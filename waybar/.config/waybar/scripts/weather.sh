@@ -46,4 +46,4 @@ tomorrow_icon=$(get_icon "$tomorrow_code")
 text="| ${current_icon} ${current_temp}°C | ${tomorrow_icon} ${tomorrow_temp_min}-${tomorrow_temp_max}°C"
 tooltip="Today: ${current_desc}, ${current_temp}°C\nTomorrow: ${tomorrow_desc}, ${tomorrow_temp_min}-${tomorrow_temp_max}°C"
 # Output JSON
-echo "{\"text\": \"$text\", \"tooltip\": \"$tooltip\"}"ext\", \"tooltip\": \"$tooltip\"}"
+echo "{\"text\": \"$text\", \"tooltip\": \"$tooltip\"}"
