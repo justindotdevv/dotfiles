@@ -75,8 +75,6 @@ tooltip {
   padding: 4px;
   background: @background;
   font-size: 12px;
-  border: 2px solid alpha(@foreground, 0.64);
-  border-radius: 8px;
 }
 
 #clock {
