@@ -86,7 +86,8 @@ tooltip {
 }
 
 #custom-screenrecording-indicator {
-  margin-left: 8px;
+  margin-left: 14px;
+  margin-right: 5px;
   font-size: 10px;
 }
 
