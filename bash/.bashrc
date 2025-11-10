@@ -22,4 +22,3 @@ alias gl='git log --oneline'
 alias gd='git diff'
 alias gpl='git pull'
 alias lg='lazygit'
-alias gui="gitui"
