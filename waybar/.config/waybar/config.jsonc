@@ -72,7 +72,7 @@
     "format": "{}",
     "exec": "~/.config/waybar/scripts/pacman-updates.sh",
     "return-type": "json",
-    "interval": 1800,
+    "interval": 3600,
     "on-click": "omarchy-launch-floating-terminal-with-presentation 'sudo pacman -Syu' ",
     "signal": 9,
   },
