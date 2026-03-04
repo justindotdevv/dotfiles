@@ -18,6 +18,8 @@ nvim/.config/nvim/plugin/
 nvim/.config/nvim/lazy-lock.json
 nvim/.config/nvim/.neoconf.json
 nvim/.config/nvim/lazyvim.json
+# Nvim theme symlink (machine-local, points to ~/.config/omarchy/current/theme/neovim.lua)
+nvim/.config/nvim/lua/plugins/theme.lua
 
 # Zed generated files
 zed/.config/zed/.blob_store/
