@@ -15,7 +15,7 @@
   ],
   "modules-right": [
     "group/tray-expander",
-    "custom/pacman-updates",
+    // "custom/pacman-updates",
     "network",
     "pulseaudio",
     "battery",
