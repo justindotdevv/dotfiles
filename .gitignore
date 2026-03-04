@@ -13,8 +13,11 @@ cache/
 # Tmux plugins (installed by tpm)
 tmux/.config/tmux/plugins/
 
-# Nvim generated plugin loader
+# Nvim generated files
 nvim/.config/nvim/plugin/
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/.neoconf.json
+nvim/.config/nvim/lazyvim.json
 
 # Zed generated files
 zed/.config/zed/.blob_store/
