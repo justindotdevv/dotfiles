@@ -1,0 +1,16 @@
+customCommands:
+  - key: '<c-l>'
+    context: 'files'
+    command: 'lumen diff'
+    loadingText: 'Opening lumen...'
+    output: terminal
+  - key: '<c-l>'
+    context: 'localBranches'
+    command: 'lumen diff {{.CheckedOutBranch.Name}}..{{.SelectedLocalBranch.Name}}'
+    loadingText: 'Opening lumen...'
+    output: terminal
+  - key: '<c-l>'
+    context: 'commits'
+    command: 'lumen diff {{.SelectedLocalCommit.Sha}}'
+    loadingText: 'Opening lumen...'
+    output: terminal

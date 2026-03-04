@@ -1,0 +1,129 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true
+  },
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": true,
+    "selections_menu": true,
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "runnables": true,
+    "line_numbers": true
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "ctx7sk-08d38d6b-6a73-46b5-a0ed-f83c0818b5e8"
+      }
+    }
+  },
+  "vim_mode": true,
+  "agent_ui_font_size": 13.0,
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 400.0,
+  "active_pane_modifiers": {},
+  "window_decorations": "server",
+  "use_system_window_tabs": false,
+  "centered_layout": {
+    "left_padding": 0.4
+  },
+  "bottom_dock_layout": "full",
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": true,
+    "enable_preview_from_file_finder": true
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "show_diagnostics": "off",
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": false
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_icon": true,
+    "show_sign_in": false,
+    "show_branch_name": true
+  },
+  "debugger": {
+    "button": true
+  },
+  "search": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "terminal": {
+    "dock": "right",
+    "button": false
+  },
+  "status_bar": {
+    "cursor_position_button": false,
+    "active_language_button": true
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "hide_root": false,
+    "git_status": true,
+    "folder_icons": true,
+    "file_icons": true,
+    "hide_gitignore": false,
+    "button": true
+  },
+  "sticky_scroll": {
+    "enabled": false
+  },
+  "autosave": "on_focus_change",
+  "ui_font_family": "CaskaydiaMono Nerd Font",
+  "buffer_font_family": "CaskaydiaMono Nerd Font",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-code-fast-1"
+    },
+    "default_profile": "write",
+    "play_sound_when_agent_done": true,
+    "enable_feedback": false,
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3-pro-preview"
+    },
+    "model_parameters": []
+  },
+  "ui_font_size": 14.0,
+  "buffer_font_size": 12.0,
+  "theme": "Flexoki Dark"
+}

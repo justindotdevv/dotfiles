@@ -1,5 +1,6 @@
 # Backup files
 *.backup
+*.bak*
 *~
 .DS_Store
 
@@ -8,4 +9,24 @@
 
 # Cache
 cache/
+
+# Tmux plugins (installed by tpm)
+tmux/.config/tmux/plugins/
+
+# Nvim generated plugin loader
+nvim/.config/nvim/plugin/
+
+# Zed generated files
+zed/.config/zed/.blob_store/
+zed/.config/zed/copilot/
+zed/.config/zed/node/
+zed/.config/zed/prettier/
+zed/.config/zed/db/
+
+# NWG dock generated
+nwg-dock-hyprland/.config/nwg-dock-hyprland/colors.css
+
+# Agent files
+**/AGENTS.md
+
 omarchy/.config/omarchy/themes/mechanoonna/

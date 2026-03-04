@@ -1,0 +1,26 @@
+@import "../omarchy/current/theme/swayosd.css";
+
+window#osd {
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  background-color: @background-color;
+}
+
+label {
+  font-family: "CaskaydiaMono Nerd Font";
+  font-size: 11pt;
+
+  color: @label;
+}
+
+image {
+  color: @image;
+}
+
+progressbar {
+  border-radius: 0.5;
+}
+
+progress {
+  background-color: @progress;
+}
