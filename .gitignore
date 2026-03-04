@@ -13,11 +13,14 @@ cache/
 # Tmux plugins (installed by tpm)
 tmux/.config/tmux/plugins/
 
-# Nvim generated files
-nvim/.config/nvim/plugin/
+# Nvim generated/machine-local files
 nvim/.config/nvim/lazy-lock.json
 nvim/.config/nvim/.neoconf.json
 nvim/.config/nvim/lazyvim.json
+nvim/.config/nvim/plugin/*
+!nvim/.config/nvim/plugin/after/
+nvim/.config/nvim/plugin/after/*
+!nvim/.config/nvim/plugin/after/transparency.lua
 # Nvim theme symlink (machine-local, points to ~/.config/omarchy/current/theme/neovim.lua)
 nvim/.config/nvim/lua/plugins/theme.lua
 
