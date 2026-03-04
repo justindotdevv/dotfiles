@@ -14,13 +14,14 @@
    "pop_to_root_on_close": true,
    "font": {
       "normal": {
-         "family": "Geist",
+         "family": "Geist Black",
          "size": 11
       }
    },
    "theme": {
       "dark": {
-         "name": "omarchy"
+         "name": "omarchy",
+         "icon_theme": "Breeze"
       }
    },
    "launcher_window": {
