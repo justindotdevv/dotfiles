@@ -61,7 +61,7 @@
     "tooltip": false
   },
   "custom/omarchy": {
-    "format": "omarchy",
+    "format": "  omarchy",
     "on-click": "omarchy-menu",
     "on-click-right": "xdg-terminal-exec",
     "tooltip": false
