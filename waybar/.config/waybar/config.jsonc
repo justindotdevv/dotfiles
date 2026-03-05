@@ -54,6 +54,7 @@
       "focused": "",
       "active": ""
     },
+    "tooltip": false
   },
   "custom/separator": {
     "format": "|",
@@ -70,6 +71,7 @@
     "exec": "omarchy-update-available",
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
+    "tooltip": false,
     "signal": 7,
     "interval": 21600
   },
@@ -82,14 +84,14 @@
       "recording": "󰍬",
       "transcribing": "󰔟"
     },
-    "tooltip": true,
+    "tooltip": false,
     "on-click-right": "omarchy-voxtype-config",
     "on-click": "omarchy-voxtype-model"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
+    "tooltip": false,
     "format-icons": {
       "performance": "",
       "balanced": "",
@@ -100,13 +102,14 @@
     "interval": 1,
     "format": "cpu: {usage}%",
     "format-icons": [],
+    "tooltip": false,
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "temperature": {
     "thermal-zone": 7,
     "format": "temp: {temperatureC}°C",
     "interval": 2,
-    "tooltip": true,
+    "tooltip": false,
     "critical-threshold": 80
   },
   "backlight": {
@@ -114,6 +117,7 @@
     "rotate": 0,
     "format": "{icon}",
     "tooltip-format": "{percent}%",
+    "tooltip": false,
     "format-icons": [
       "󰃞",
       "󰃝",
@@ -128,12 +132,14 @@
     "format": "ram: {percentage}%",
     "format-icons": [],
     "max-length": 10,
+    "tooltip": false,
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:%a %d %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip-format": "<span>{calendar}</span>",
+    "tooltip": false,
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -161,6 +167,7 @@
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
+    "tooltip": false,
     "interval": 3,
     "spacing": 1,
     "on-click": "omarchy-launch-floating-terminal-with-presentation wifitui"
@@ -199,6 +206,7 @@
     "format-full": "{capacity}% 󰂅",
     "tooltip-format-discharging": "{timeTo}",
     "tooltip-format-charging": "{timeTo}",
+    "tooltip": false,
     "interval": 5,
     "on-click": "omarchy-menu power",
     "states": {
@@ -211,6 +219,7 @@
     "format-disabled": "󰂲",
     "format-connected": "󰂱",
     "tooltip-format": "Devices connected: {num_connections}",
+    "tooltip": false,
     "on-click": "omarchy-launch-bluetooth"
   },
   "pulseaudio#input": {
@@ -218,6 +227,7 @@
     "format-source-muted": "",
     "format": "{format_source}",
     "tooltip-format": "{format_source} {source_volume}%",
+    "tooltip": false,
     "scroll-step": 1,
     "smooth-scrolling-threshold": 1,
     "max-volume": 100,
@@ -229,6 +239,7 @@
   "pulseaudio#output": {
     "format": "{icon}",
     "tooltip-format": "{icon}   {volume}%",
+    "tooltip": false,
     "format-muted": "",
     "format-icons": {
       "headphone": "",
@@ -249,7 +260,8 @@
     "return-type": "json",
     "exec": "waybar-module-pomodoro --no-work-icons -w 30",
     "on-click": "waybar-module-pomodoro toggle",
-    "on-click-right": "waybar-module-pomodoro reset"
+    "on-click-right": "waybar-module-pomodoro reset",
+    "tooltip": false
   },
   "mpris": {
     "player": "spotify",
@@ -267,14 +279,16 @@
       "firefox",
       "chromium",
       "brave"
-    ]
+    ],
+    "tooltip": false
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
       "deactivated": "󰾫"
-    }
+    },
+    "tooltip": false
   },
   "privacy": {
     "icon-spacing": 4,
@@ -283,7 +297,7 @@
     "modules": [
       {
         "type": "audio-in",
-        "tooltip": true,
+        "tooltip": false,
         "tooltip-icon-size": 24
       }
     ],
@@ -300,7 +314,7 @@
     "interval": 2,
     "icons-size": 12,
     "format": "{}",
-    "tooltip": true,
+    "tooltip": false,
     "tooltip-format": "Camera active"
   },
   "custom/updatespacman": {
@@ -311,7 +325,8 @@
       "updated": "",
     },
     "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --no-zero-output"
+    "exec": "waybar-module-pacman-updates --no-zero-output",
+    "tooltip": false
   },
   "group/tray-expander": {
     "orientation": "inherit",
@@ -332,23 +347,27 @@
     "on-click": "omarchy-toggle-idle",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
     "signal": 9,
-    "return-type": "json"
+    "return-type": "json",
+    "tooltip": false
   },
   "custom/notification-silencing-indicator": {
     "on-click": "omarchy-toggle-notification-silencing",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
     "signal": 10,
-    "return-type": "json"
+    "return-type": "json",
+    "tooltip": false
   },
   "tray": {
     "icon-size": 12,
-    "spacing": 12
+    "spacing": 12,
+    "tooltip": false
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-cmd-screenrecord",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
-    "return-type": "json"
+    "return-type": "json",
+    "tooltip": false
   },
   "group/weather": {
     "orientation": "inherit",
@@ -367,11 +386,12 @@
     "format": "{}",
     "interval": 1800,
     "signal": 9,
-    "tooltip": true
+    "tooltip": false
   },
   // --- Hidden but available if needed ---
   "custom/cava": {
     "format": "{}",
-    "exec": "~/.config/waybar/cava.sh"
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false
   }
 }
