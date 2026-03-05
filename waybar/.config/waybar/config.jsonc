@@ -7,7 +7,7 @@
   // "height": 0,
   "margin-top": 2,
   "margin-left": 50,
-  // "width": 1500,
+  "width": 1790,
   "margin-right": 50,
   "margin-bottom": 0,
   "modules-left": [
@@ -61,7 +61,7 @@
     "tooltip": false
   },
   "custom/omarchy": {
-    "format": "󱡓",
+    "format": "omarchy",
     "on-click": "omarchy-menu",
     "on-click-right": "xdg-terminal-exec",
     "tooltip": false
