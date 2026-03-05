@@ -16,7 +16,7 @@ window#waybar {
 
 #waybar > box {
   border-radius: 7px;
-  border: 2px solid rgba(255, 255, 255, 0.16);
+  border: 2px solid #343331;
   margin: 0px 0px 2px 0px;
   background-color: @background;
   /* box-shadow: 0px 0px 2px #101010; */
@@ -132,7 +132,7 @@ tooltip {
   padding: 4px;
   background: @background;
   font-size: 10px;
-  border: 1px solid alpha(@foreground, 0.8);
+  border: 1px solid #343331;
   border-radius: 8px;
 }
 
