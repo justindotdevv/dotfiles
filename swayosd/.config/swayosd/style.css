@@ -2,12 +2,12 @@
 
 window#osd {
   border: 2px solid rgba(255, 255, 255, 0.16);
-  border-radius: 7px;
+  border-radius: 25px;
   background-color: @background-color;
 }
 
 label {
-  font-family: "CaskaydiaMono Nerd Font";
+  font-family: "GeistMono Nerd Font";
   font-size: 11pt;
 
   color: @label;
