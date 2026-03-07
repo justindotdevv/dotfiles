@@ -1,13 +1,13 @@
 @import url("./colors.css");
 
 window {
-    border-radius: 20px;
+    border-radius: 16px;
     border-style: solid;
     border-width: 2px;
 }
 
 #box {
-    padding: 6px;
+    padding: 8px;
 }
 
 button,
@@ -22,7 +22,7 @@ button {
     margin-left: 4px;
     margin-right: 4px;
     margin-top: 4px;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 button:focus {
