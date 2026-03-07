@@ -56,6 +56,7 @@ x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/aether=aether-protocol-handler.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/opencode=opencode-desktop-handler.desktop
 
 [Added Associations]
 text/markdown=nvim.desktop;
