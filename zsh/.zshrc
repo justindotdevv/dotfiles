@@ -91,6 +91,7 @@ alias oc='opencode'
 alias zen='zen-browser'
 alias zed='zeditor'
 alias lg='lazygit'
+alias in='omarchy-pkg-aur-install'
 
 gac() {
   git add -u && git commit -m "$(lumen draft)"
