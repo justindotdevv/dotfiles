@@ -136,6 +136,9 @@ if command -v fzf &> /dev/null; then
   source <(fzf --zsh 2>/dev/null) || true
 fi
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
 # --- Plugins (syntax highlighting + autosuggestions) ---
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
