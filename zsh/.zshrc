@@ -1,3 +1,6 @@
+# --- Time format ---
+TIMEFMT=$'\ncpu\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
+
 # --- History ---
 HISTFILE=~/.zsh_history
 HISTSIZE=32768
@@ -148,3 +151,6 @@ export MANROFFOPT="-c"
 
 # --- Startup ---
 fastfetch -l arch
+
+# bun completions
+[ -s "/home/justin/.bun/_bun" ] && source "/home/justin/.bun/_bun"
