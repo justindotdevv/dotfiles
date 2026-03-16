@@ -110,6 +110,7 @@ button:hover {
 #custom-omarchy {
   font-size: 14px;
   padding-left: 0px;
+  color: @blue;
 }
 
 #custom-expand-icon {
@@ -196,7 +197,7 @@ tooltip label {
 }
 
 #mpris {
-  color: @foreground;
+  color: @green;
   animation: repeat;
   animation-name: blink;
   animation-duration: 3s;
