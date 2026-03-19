@@ -67,6 +67,8 @@ open() {
   xdg-open "$@" >/dev/null 2>&1 &
 }
 
+alias helium='helium-browser'
+alias dl='yt-dlp'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
