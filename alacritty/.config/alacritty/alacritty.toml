@@ -20,6 +20,8 @@ opacity = 1.0
 bindings = [
   { key = "Insert", mods = "Shift", action = "Paste" },
   { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Return", mods = "Shift", chars = "\u001b[13;2u" },
+  { key = "Return", mods = "Control", chars = "\u001b[13;5u" },
 ]
 
 [terminal]

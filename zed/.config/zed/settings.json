@@ -7,6 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": false,
+      "remote": false,
+      "settings": {}
+    }
+  },
   "auto_update": false,
   "telemetry": {
     "diagnostics": false,
