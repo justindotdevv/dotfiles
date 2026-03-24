@@ -156,3 +156,5 @@ fastfetch -l arch
 
 # bun completions
 [ -s "/home/justin/.bun/_bun" ] && source "/home/justin/.bun/_bun"
+
+source /home/justin/.daytona.completion_script.zsh
