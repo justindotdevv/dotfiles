@@ -6,9 +6,9 @@
   "spacing": 0,
   // "height": 0,
   "margin-top": 5,
-  "margin-left": 50,
+  "margin-left": 350,
   // "width": 1790,
-  "margin-right": 50,
+  "margin-right": 350,
   "margin-bottom": 0,
   "modules-left": [
     "custom/omarchy",
