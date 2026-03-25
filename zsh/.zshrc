@@ -39,6 +39,9 @@ export BAT_THEME=ansi
 export OMARCHY_PATH=$HOME/.local/share/omarchy
 export PATH=$OMARCHY_PATH/bin:$PATH:$HOME/.local/bin
 
+# --- Pi coding agent config ---
+export PI_CODING_AGENT_DIR="$HOME/.config/pi"
+
 # --- Omarchy aliases ---
 if command -v eza &> /dev/null; then
   alias ls='eza -lh --group-directories-first --icons=auto'
