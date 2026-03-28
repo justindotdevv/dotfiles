@@ -8,7 +8,7 @@ normal = { family = "GeistMono Nerd Font Mono", style = "Bold" }
 bold = { family = "GeistMono Nerd Font Mono", style = "Ultra-Bold" }
 italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
 bold_italic = { family = "CaskaydiaMono Nerd Font", style = "Bold Italic" }
-size = 10
+size = 11
 
 [window]
 padding.x = 14
