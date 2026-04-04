@@ -40,3 +40,12 @@ nwg-dock-hyprland/.config/nwg-dock-hyprland/colors.css
 /cava/.config/cava/themes/omarchy
 /superfile/.config/superfile/theme/omarchy.toml
 /zed/.config/zed/themes/omarchy.json
+
+# GitHub CLI auth (sensitive)
+gh/.config/gh/hosts.yml
+
+# Git local identity/credentials (sensitive)
+git/.config/git/config.local
+
+# Opencode generated files
+opencode/.config/opencode/node_modules/
