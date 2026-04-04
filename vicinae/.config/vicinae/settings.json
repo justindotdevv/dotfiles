@@ -21,8 +21,11 @@
    "theme": {
       "dark": {
          "name": "vicinae-dark",
-         "icon_theme": "Breeze"
+         "icon_theme": "Breeze Dark"
       }
+   },
+   "telemetry": {
+      "system_info": false
    },
    "launcher_window": {
       "opacity": 1,
@@ -43,6 +46,14 @@
                "/home/justin/.local/share/applications",
                "/usr/share/applications"
             ]
+         },
+         "entrypoints": {
+            "nm-connection-editor": {
+               "enabled": false
+            },
+            "scrcpy-console": {
+               "enabled": true
+            }
          }
       },
       "files": {
