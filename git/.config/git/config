@@ -1,0 +1,31 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	pu = push
+[init]
+	defaultbranch = main
+[color]
+	ui = auto
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	preloadindex = true
+	fsmonitor = true
+	untrackedCache = true
+[rerere]
+	enabled = true
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = nvimdiff
+[mergetool]
+	prompt = true
+[include]
+	path = ~/.config/git/config.local
