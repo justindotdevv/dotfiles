@@ -158,6 +158,6 @@ export MANROFFOPT="-c"
 fastfetch -l arch
 
 # bun completions
-[ -s "/home/justin/.bun/_bun" ] && source "/home/justin/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-source /home/justin/.daytona.completion_script.zsh
+[[ -f "$HOME/.daytona.completion_script.zsh" ]] && source "$HOME/.daytona.completion_script.zsh"

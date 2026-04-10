@@ -178,7 +178,7 @@ stow_package() {
         dry_run "Would stow: $package"
     else
         cd "$DOTFILES_DIR"
-        stow --restow "$package" 2>&1 | while read -r line; do
+        stow --target="$HOME" --restow "$package" 2>&1 | while read -r line; do
             if [[ "$line" =~ "existing" ]] || [[ "$line" =~ "conflict" ]]; then
                 warning "$line"
             else
