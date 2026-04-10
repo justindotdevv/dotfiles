@@ -35,7 +35,6 @@ zed/.config/zed/db/
 nwg-dock-hyprland/.config/nwg-dock-hyprland/colors.css
 
 # Agent files
-**/AGENTS.md
 **/.claude/
 /cava/.config/cava/themes/omarchy
 /superfile/.config/superfile/theme/omarchy.toml
