@@ -3,3 +3,4 @@ show_percentage = true
 top_margin = 0.5
 max_volume = 100
 style = "./style.css"
+keyboard_backlight = true
