@@ -48,11 +48,17 @@
             ]
          },
          "entrypoints": {
+            "helium": {
+               "alias": "he"
+            },
             "nm-connection-editor": {
                "enabled": false
             },
             "scrcpy-console": {
                "enabled": true
+            },
+            "zen": {
+               "alias": "zen"
             }
          }
       },
