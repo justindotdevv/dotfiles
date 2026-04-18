@@ -13,7 +13,7 @@ return {
         local fg = "#100f0f"
         local selected = { bg = accent, fg = fg, bold = true, italic = false }
         return {
-          fill = { bg = { attribute = "bg", highlight = "Normal" } },
+          fill = { bg = fg },
           background = { bg = { attribute = "bg", highlight = "Normal" }, bold = false, italic = false },
           buffer_selected = selected,
           tab = { bg = { attribute = "bg", highlight = "Normal" } },
