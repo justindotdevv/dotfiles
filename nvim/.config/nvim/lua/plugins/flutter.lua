@@ -36,8 +36,8 @@ return {
         },
       },
       debugger = {
-        enabled = true,
-        run_via_dap = true,
+        enabled = false,
+        run_via_dap = false,
       },
     },
     keys = {
