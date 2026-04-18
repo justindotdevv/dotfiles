@@ -21,23 +21,7 @@ return {
           italic = false,
         },
         buffer_visible = {
-          bg = "normal",
-          fg = "gray",
-        },
-        separator = {
-          fg = "bg",
-          bg = "bg",
-        },
-        separator_selected = {
-          fg = "bg",
-          bg = "bg",
-        },
-        separator_visible = {
-          fg = "bg",
-          bg = "bg",
-        },
-        fill = {
-          bg = "bg",
+          fg = "#6b7280",
         },
       },
     })
