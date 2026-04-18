@@ -57,6 +57,7 @@ x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/aether=aether-protocol-handler.desktop
 inode/directory=org.gnome.Nautilus.desktop
 x-scheme-handler/opencode=opencode-desktop-handler.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
 text/markdown=nvim.desktop;
