@@ -5,6 +5,13 @@ return {
       options = {
         style = "minimal",
       },
+      highlights = {
+        buffer_selected = {
+          bg = "green",
+          fg = "black",
+        },
+      },
     })
   end,
 }
+
