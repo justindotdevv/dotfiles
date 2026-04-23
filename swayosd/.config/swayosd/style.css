@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/swayosd.css";
 
 window#osd {
-  border: 2px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 25px;
   background-color: @background-color;
 }
@@ -18,9 +18,9 @@ image {
 }
 
 progressbar {
-  border-radius: 0.5;
+  border-radius: 1;
 }
 
 progress {
-  background-color: @progress;
+  background-color: #fff;
 }
