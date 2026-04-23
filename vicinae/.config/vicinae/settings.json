@@ -37,9 +37,6 @@
       "toggle-action-panel": "control+K"
    },
    "providers": {
-      "@justindotdevv/net-test": {
-         "enabled": false
-      },
       "applications": {
          "preferences": {
             "paths": [
@@ -56,6 +53,9 @@
             },
             "scrcpy-console": {
                "enabled": true
+            },
+            "whatsapp-linux-desktop": {
+               "alias": "whatsapp"
             },
             "zen": {
                "alias": "zen"
