@@ -68,6 +68,13 @@
                "alias": "ff"
             }
          }
+      },
+      "wm": {
+         "entrypoints": {
+            "switch-windows": {
+               "alias": "ws"
+            }
+         }
       }
    }
 }

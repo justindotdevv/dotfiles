@@ -29,7 +29,7 @@
     // "group/weather",
     "custom/voxtype",
     "custom/update",
-    "custom/screenrecording-indicator",
+    "custom/screenrecording-indicator"
   ],
   "modules-right": [
     "group/tray-expander",
