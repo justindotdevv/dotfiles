@@ -4,10 +4,10 @@ general.import = ["~/.config/omarchy/current/theme/alacritty.toml"]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "GeistMono Nerd Font Mono", style = "Bold" }
-bold = { family = "GeistMono Nerd Font Mono", style = "Ultra-Bold" }
-italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
-bold_italic = { family = "CaskaydiaMono Nerd Font", style = "Bold Italic" }
+normal = { family = "GeistMono Nerd Font" }
+bold = { family = "GeistMono Nerd Font", style = "Ultra-Bold" }
+italic = { family = "GeistMono Nerd Font", style = "Italic" }
+bold_italic = { family = "GeistMono Nerd Font", style = "Bold Italic" }
 size = 11
 
 [window]
