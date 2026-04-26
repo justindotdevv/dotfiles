@@ -38,12 +38,6 @@
    },
    "providers": {
       "applications": {
-         "preferences": {
-            "paths": [
-               "/home/justin/.local/share/applications",
-               "/usr/share/applications"
-            ]
-         },
          "entrypoints": {
             "dev.zed.Zed-Preview": {
                "alias": "zed"
