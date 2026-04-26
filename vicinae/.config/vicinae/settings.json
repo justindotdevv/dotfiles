@@ -57,6 +57,9 @@
             "scrcpy-console": {
                "enabled": true
             },
+            "spotify": {
+               "alias": "spo"
+            },
             "whatsapp-linux-desktop": {
                "alias": "wha"
             },
