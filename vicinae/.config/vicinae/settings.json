@@ -14,14 +14,14 @@
    "pop_to_root_on_close": true,
    "font": {
       "normal": {
-         "family": "Geist SemiBold",
+         "family": "Geist",
          "size": 11
       }
    },
    "theme": {
       "dark": {
          "name": "vicinae-dark",
-         "icon_theme": "Breeze Dark"
+         "icon_theme": "Yaru-dark"
       }
    },
    "telemetry": {
@@ -45,6 +45,9 @@
             ]
          },
          "entrypoints": {
+            "dev.zed.Zed-Preview": {
+               "alias": "zed"
+            },
             "helium": {
                "alias": "he"
             },
@@ -55,7 +58,10 @@
                "enabled": true
             },
             "whatsapp-linux-desktop": {
-               "alias": "whatsapp"
+               "alias": "wha"
+            },
+            "yazi": {
+               "enabled": false
             },
             "zen": {
                "alias": "zen"
