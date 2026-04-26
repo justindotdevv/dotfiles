@@ -4,22 +4,24 @@ My personal configuration files, managed with [GNU Stow](https://www.gnu.org/sof
 
 ## Install
 
+Install GNU Stow, clone the repo, then stow the modules you want:
+
 ```sh
 git clone https://github.com/justindotdevv/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./install.sh
+stow nvim zsh tmux
 ```
 
-Install specific packages only:
+Stow everything:
 
 ```sh
-./install.sh nvim zsh tmux
+stow */
 ```
 
-Preview without changes:
+Remove a module:
 
 ```sh
-./install.sh --dry-run
+stow -D nvim
 ```
 
 ## What's inside
@@ -28,6 +30,5 @@ Hyprland · Waybar · Walker · Mako · Alacritty · Kitty · Foot · Neovim · 
 
 ## Notes
 
-- Conflicting files are backed up to `~/.dotfiles-backup-<timestamp>/` by default.
-- Use `--no-backup` to overwrite instead.
-- Tmux plugins: open tmux and press `prefix + I`.
+- Stow will refuse to overwrite existing files — back up or remove conflicting configs first.
+- Tmux plugins: install [TPM](https://github.com/tmux-plugins/tpm), then press `prefix + I` inside tmux.
