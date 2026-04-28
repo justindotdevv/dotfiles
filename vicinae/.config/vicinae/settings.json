@@ -42,6 +42,9 @@
             "dev.zed.Zed-Preview": {
                "alias": "zed"
             },
+            "google-chrome": {
+               "alias": "chrome"
+            },
             "helium": {
                "alias": "he"
             },
