@@ -17,8 +17,24 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 setopt AUTO_CD
 
 # --- Key bindings ---
+bindkey -v
+export KEYTIMEOUT=1
+
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
+# Vi-mode cursor shape (beam in insert, block in normal)
+_set_cursor() {
+  case $KEYMAP in
+    vicmd)        printf '\e[2 q' ;;  # block
+    main|viins|*) printf '\e[6 q' ;;  # beam
+  esac
+}
+zle-keymap-select() { _set_cursor }
+zle-line-init()     { _set_cursor }
+zle -N zle-keymap-select
+zle -N zle-line-init
+preexec() { printf '\e[6 q' }  # reset to beam before running commands
 
 # --- PATH additions (before omarchy so omarchy bin takes priority) ---
 export PATH="$HOME/.cache/.bun/bin:$PATH"
