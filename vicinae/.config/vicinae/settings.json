@@ -51,6 +51,9 @@
             "nm-connection-editor": {
                "enabled": false
             },
+            "org.gnome.Calculator": {
+               "alias": "calc"
+            },
             "scrcpy-console": {
                "enabled": true
             },
