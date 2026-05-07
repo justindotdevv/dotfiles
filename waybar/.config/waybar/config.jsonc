@@ -34,7 +34,6 @@
   "modules-right": [
     "group/tray-expander",
     "custom/separator",
-    "custom/pomodoro",
     "backlight",
     "custom/updatespacman",
     "bluetooth",
