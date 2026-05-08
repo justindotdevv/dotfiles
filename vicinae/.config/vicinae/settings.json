@@ -74,6 +74,11 @@
             }
          }
       },
+      "clipboard": {
+         "preferences": {
+            "monitoring": true
+         }
+      },
       "files": {
          "entrypoints": {
             "search": {
