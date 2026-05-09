@@ -43,6 +43,34 @@ return {
         desc = "Harpoon menu (telescope)",
       },
       {
+        "<leader>hr",
+        function()
+          harpoon:list():remove()
+        end,
+        desc = "Harpoon remove current file",
+      },
+      {
+        "<leader>hc",
+        function()
+          harpoon:list():clear()
+        end,
+        desc = "Harpoon clear list",
+      },
+      {
+        "<leader>hp",
+        function()
+          harpoon:list():prev()
+        end,
+        desc = "Harpoon previous file",
+      },
+      {
+        "<leader>hn",
+        function()
+          harpoon:list():next()
+        end,
+        desc = "Harpoon next file",
+      },
+      {
         "<leader>1",
         function()
           harpoon:list():select(1)
