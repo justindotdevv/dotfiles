@@ -79,6 +79,8 @@ return {
     }
   end,
   config = function()
-    require("harpoon"):setup()
+    local harpoon = require("harpoon")
+    harpoon:setup()
+    harpoon:extend(require("harpoon.extensions").builtins.navigate_with_number())
   end,
 }
