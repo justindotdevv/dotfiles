@@ -346,9 +346,9 @@ bind_exec("XF86AudioPlay", "Play", "omarchy-swayosd-client --playerctl play-paus
 bind_exec("XF86AudioPrev", "Previous track", "omarchy-swayosd-client --playerctl previous", { locked = true })
 bind_exec("SUPER + XF86AudioMute", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
 
-bind("SUPER + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "Insert" }), "Universal copy")
-bind("SUPER + V", hl.dsp.send_shortcut({ mods = "SHIFT", key = "Insert" }), "Universal paste")
-bind("SUPER + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X" }), "Universal cut")
+bind("SUPER + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "Insert", window = "activewindow" }), "Universal copy")
+bind("SUPER + V", hl.dsp.send_shortcut({ mods = "SHIFT", key = "Insert", window = "activewindow" }), "Universal paste")
+bind("SUPER + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }), "Universal cut")
 bind_exec("SUPER + CTRL + V", "Clipboard manager", "omarchy-launch-walker -m clipboard")
 
 bind("SUPER + W", hl.dsp.window.close(), "Close window")
