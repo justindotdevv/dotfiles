@@ -1,6 +1,6 @@
 # dotfiles
 
-M personal configuration files for **Arch + Hyprland (Omarchy)**, managed with [GNU Stow](https://www.gnu.org/software/stow/).
+My personal configuration files for **Arch + Hyprland (Omarchy)**, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 A handful of modules (`zsh`, `nvim`, `tmux`, `git`, `alacritty`, `kitty`, `btop`) are portable to other Unix systems; the rest assume a Wayland/Hyprland setup.
 
