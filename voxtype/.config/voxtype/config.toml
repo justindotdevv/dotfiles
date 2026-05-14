@@ -98,3 +98,9 @@ on_transcription = false
 #
 # Custom word replacements (case-insensitive)
 # replacements = { "hyperwhisper" = "hyprwhspr" }
+
+[osd]
+enabled = true
+frontend = "gtk4"          # or "native"
+position = "bottom-center"
+top_margin = 0.85          # swayosd-aligned by default
