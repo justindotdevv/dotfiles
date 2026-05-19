@@ -99,12 +99,9 @@ alias s='spf'
 alias t='tmux attach || tmux new'
 n() { if [[ $# -eq 0 ]]; then command nvim . ; else command nvim "$@"; fi; }
 alias g='git'
-alias gcm='git commit -m'
-alias gcam='git commit -a -m'
-alias gcad='git commit -a --amend'
 
 # --- Omarchy functions ---
-for f in $OMARCHY_PATH/default/bash/fns/*; do source "$f"; done
+# for f in $OMARCHY_PATH/default/bash/fns/*; do source "$f"; done
 
 # --- Personal overrides ---
 alias ts='tailscale'
@@ -152,10 +149,6 @@ if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
-if command -v try &> /dev/null; then
-  eval "$(SHELL=/bin/zsh try init ~/Work/tries)"
-fi
-
 if command -v fzf &> /dev/null; then
   source <(fzf --zsh 2>/dev/null) || true
 fi
@@ -169,9 +162,6 @@ export MANROFFOPT="-c"
 
 [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# --- Startup ---
-fastfetch -l arch
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

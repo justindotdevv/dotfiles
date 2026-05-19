@@ -1,16 +1,44 @@
 customCommands:
-  - key: '<c-l>'
-    context: 'files'
-    command: 'lumen diff'
-    loadingText: 'Opening lumen...'
+  # Generate a commit message for staged changes with lumen
+  - key: "<c-g>"
+    context: "files"
+    description: "Generate commit message with lumen (AI)"
+    command: "lumen draft | tee >(wl-copy)"
+    loadingText: "Generating message..."
+    output: popup
+
+  # Generate a commit message with extra context
+  - key: "<c-k>"
+    context: "files"
+    description: "Generate commit message with lumen + context"
+    command: "lumen draft -c {{.Form.Context | quote}} | tee >(wl-copy)"
+    loadingText: "Generating message..."
+    prompts:
+      - type: "input"
+        title: "Context"
+        key: "Context"
+    output: popup
+
+  # Interactive diff viewer
+  - key: "<c-l>"
+    context: "files"
+    description: "Open lumen diff viewer"
+    command: "lumen diff"
+    loadingText: "Opening lumen..."
     output: terminal
-  - key: '<c-l>'
-    context: 'localBranches'
-    command: 'lumen diff {{.CheckedOutBranch.Name}}..{{.SelectedLocalBranch.Name}}'
-    loadingText: 'Opening lumen...'
+
+  # Compare current branch against the selected branch with lumen
+  - key: "<c-l>"
+    context: "localBranches"
+    description: "Lumen diff against selected branch"
+    command: "lumen diff {{.CheckedOutBranch.Name}}..{{.SelectedLocalBranch.Name}}"
+    loadingText: "Opening lumen..."
     output: terminal
-  - key: '<c-l>'
-    context: 'commits'
-    command: 'lumen diff {{.SelectedLocalCommit.Sha}}'
-    loadingText: 'Opening lumen...'
+
+  # Explain the selected commit with lumen
+  - key: "<c-l>"
+    context: "commits"
+    description: "Lumen explain selected commit"
+    command: "lumen explain {{.SelectedLocalCommit.Sha}}"
+    loadingText: "Opening lumen..."
     output: terminal
