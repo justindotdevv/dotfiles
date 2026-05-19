@@ -6,46 +6,46 @@ local terminal = [[uwsm-app -- xdg-terminal-exec]]
 local browser = [[omarchy-launch-browser]]
 
 local function read_theme_var(name, fallback)
-    local path = os.getenv("HOME") .. "/.config/omarchy/current/theme/hyprland.conf"
-    local file = io.open(path, "r")
-    if not file then
-        return fallback
-    end
+	local path = os.getenv("HOME") .. "/.config/omarchy/current/theme/hyprland.conf"
+	local file = io.open(path, "r")
+	if not file then
+		return fallback
+	end
 
-    for line in file:lines() do
-        local value = line:match("^%s*%$" .. name .. "%s*=%s*(.-)%s*$")
-        if value and value ~= "" then
-            file:close()
-            return value
-        end
-    end
+	for line in file:lines() do
+		local value = line:match("^%s*%$" .. name .. "%s*=%s*(.-)%s*$")
+		if value and value ~= "" then
+			file:close()
+			return value
+		end
+	end
 
-    file:close()
-    return fallback
+	file:close()
+	return fallback
 end
 
 local active_border_color = read_theme_var("activeBorderColor", "rgba(33ccffee) rgba(00ff99ee) 45deg")
 local inactive_border_color = read_theme_var("inactiveBorderColor", "rgba(595959aa)")
 
 local function bind(keys, dispatcher, description, opts)
-    opts = opts or {}
-    if description then
-        opts.description = description
-    end
-    return hl.bind(keys, dispatcher, opts)
+	opts = opts or {}
+	if description then
+		opts.description = description
+	end
+	return hl.bind(keys, dispatcher, opts)
 end
 
 local function bind_exec(keys, description, command, opts)
-    return bind(keys, hl.dsp.exec_cmd(command), description, opts)
+	return bind(keys, hl.dsp.exec_cmd(command), description, opts)
 end
 
 local function dispatch_many(...)
-    local dispatchers = { ... }
-    return function()
-        for _, dispatcher in ipairs(dispatchers) do
-            hl.dispatch(dispatcher)
-        end
-    end
+	local dispatchers = { ... }
+	return function()
+		for _, dispatcher in ipairs(dispatchers) do
+			hl.dispatch(dispatcher)
+		end
+	end
 end
 
 -- Monitors -------------------------------------------------------------------
@@ -72,140 +72,140 @@ hl.env("XCURSOR_SIZE", "24")
 
 -- Options --------------------------------------------------------------------
 hl.config({
-    render = {
-        cm_enabled = false,
-    },
+	render = {
+		cm_enabled = false,
+	},
 
-    cursor = {
-        hide_on_key_press = true,
-        no_hardware_cursors = true,
-        warp_on_change_workspace = 1,
-    },
+	cursor = {
+		hide_on_key_press = true,
+		no_hardware_cursors = true,
+		warp_on_change_workspace = 1,
+	},
 
-    xwayland = {
-        force_zero_scaling = true,
-    },
+	xwayland = {
+		force_zero_scaling = true,
+	},
 
-    ecosystem = {
-        no_update_news = true,
-    },
+	ecosystem = {
+		no_update_news = true,
+	},
 
-    general = {
-        resize_on_border = true,
-        layout = "scrolling",
-        gaps_out = 5,
-        gaps_in = 5,
-        hover_icon_on_border = true,
-        border_size = 1,
-        allow_tearing = false,
-        col = {
-            active_border = active_border_color,
-            inactive_border = inactive_border_color,
-        },
-    },
+	general = {
+		resize_on_border = true,
+		layout = "scrolling",
+		gaps_out = 5,
+		gaps_in = 5,
+		hover_icon_on_border = true,
+		border_size = 1,
+		allow_tearing = false,
+		col = {
+			active_border = active_border_color,
+			inactive_border = inactive_border_color,
+		},
+	},
 
-    decoration = {
-        rounding = 15,
-        rounding_power = 4,
-        active_opacity = 1,
-        inactive_opacity = 1,
-        shadow = {
-            enabled = false,
-            range = 22,
-            render_power = 2,
-            color = "rgba(01010190)",
-        },
-        blur = {
-            enabled = true,
-            size = 9,
-            passes = 5,
-            ignore_opacity = true,
-            xray = false,
-            new_optimizations = true,
-            contrast = 1.2,
-            brightness = 0.8,
-            special = true,
-        },
-    },
+	decoration = {
+		rounding = 15,
+		rounding_power = 4,
+		active_opacity = 1,
+		inactive_opacity = 1,
+		shadow = {
+			enabled = false,
+			range = 22,
+			render_power = 2,
+			color = "rgba(01010190)",
+		},
+		blur = {
+			enabled = true,
+			size = 9,
+			passes = 5,
+			ignore_opacity = true,
+			xray = false,
+			new_optimizations = true,
+			contrast = 1.2,
+			brightness = 0.8,
+			special = true,
+		},
+	},
 
-    group = {
-        col = {
-            border_active = active_border_color,
-            border_inactive = inactive_border_color,
-            border_locked_active = active_border_color,
-            border_locked_inactive = inactive_border_color,
-        },
-        groupbar = {
-            font_size = 12,
-            font_family = "monospace",
-            font_weight_active = "ultraheavy",
-            font_weight_inactive = "normal",
-            indicator_height = 0,
-            indicator_gap = 5,
-            height = 22,
-            gaps_in = 5,
-            gaps_out = 0,
-            text_color = "rgb(ffffff)",
-            text_color_inactive = "rgba(ffffff90)",
-            col = {
-                active = "rgba(00000040)",
-                inactive = "rgba(00000020)",
-            },
-            gradients = true,
-            gradient_rounding = 0,
-            gradient_round_only_edges = false,
-        },
-    },
+	group = {
+		col = {
+			border_active = active_border_color,
+			border_inactive = inactive_border_color,
+			border_locked_active = active_border_color,
+			border_locked_inactive = inactive_border_color,
+		},
+		groupbar = {
+			font_size = 12,
+			font_family = "monospace",
+			font_weight_active = "ultraheavy",
+			font_weight_inactive = "normal",
+			indicator_height = 0,
+			indicator_gap = 5,
+			height = 22,
+			gaps_in = 5,
+			gaps_out = 0,
+			text_color = "rgb(ffffff)",
+			text_color_inactive = "rgba(ffffff90)",
+			col = {
+				active = "rgba(00000040)",
+				inactive = "rgba(00000020)",
+			},
+			gradients = true,
+			gradient_rounding = 0,
+			gradient_round_only_edges = false,
+		},
+	},
 
-    input = {
-        kb_layout = "us",
-        kb_variant = "",
-        kb_model = "",
-        kb_options = "caps:swapescape,compose:menu",
-        kb_rules = "",
-        follow_mouse = 1,
-        repeat_rate = 40,
-        repeat_delay = 600,
-        numlock_by_default = true,
-        sensitivity = 0.30,
-        touchpad = {
-            natural_scroll = false,
-            clickfinger_behavior = true,
-            scroll_factor = 0.4,
-            disable_while_typing = true,
-        },
-    },
+	input = {
+		kb_layout = "us",
+		kb_variant = "",
+		kb_model = "",
+		kb_options = "caps:swapescape,compose:menu",
+		kb_rules = "",
+		follow_mouse = 1,
+		repeat_rate = 40,
+		repeat_delay = 600,
+		numlock_by_default = true,
+		sensitivity = 0.30,
+		touchpad = {
+			natural_scroll = false,
+			clickfinger_behavior = true,
+			scroll_factor = 0.4,
+			disable_while_typing = true,
+		},
+	},
 
-    dwindle = {
-        preserve_split = true,
-        force_split = 2,
-    },
+	dwindle = {
+		preserve_split = true,
+		force_split = 2,
+	},
 
-    master = {
-        new_status = "master",
-    },
+	master = {
+		new_status = "master",
+	},
 
-    scrolling = {
-        column_width = 0.95,
-        fullscreen_on_one_column = false,
-        focus_fit_method = 0,
-        follow_focus = true,
-    },
+	scrolling = {
+		column_width = 0.95,
+		fullscreen_on_one_column = false,
+		focus_fit_method = 0,
+		follow_focus = true,
+	},
 
-    misc = {
-        disable_hyprland_logo = true,
-        disable_splash_rendering = true,
-        disable_scale_notification = true,
-        focus_on_activate = true,
-        anr_missed_pings = 3,
-        on_focus_under_fullscreen = 1,
-        key_press_enables_dpms = true,
-        mouse_move_enables_dpms = true,
-    },
+	misc = {
+		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
+		disable_scale_notification = true,
+		focus_on_activate = true,
+		anr_missed_pings = 3,
+		on_focus_under_fullscreen = 1,
+		key_press_enables_dpms = true,
+		mouse_move_enables_dpms = true,
+	},
 
-    binds = {
-        hide_special_on_workspace_change = true,
-    },
+	binds = {
+		hide_special_on_workspace_change = true,
+	},
 })
 
 -- Animations -----------------------------------------------------------------
@@ -235,38 +235,55 @@ hl.animation({ leaf = "specialWorkspaceOut", enabled = true, speed = 2, bezier =
 
 -- Autostart ------------------------------------------------------------------
 hl.on("hyprland.start", function()
-    hl.exec_cmd("uwsm-app -- hypridle")
-    hl.exec_cmd("uwsm-app -- mako")
-    hl.exec_cmd("! omarchy-toggle-enabled waybar-off && uwsm-app -- waybar")
-    hl.exec_cmd("uwsm-app -- fcitx5 --disable notificationitem")
-    hl.exec_cmd("uwsm-app -- swaybg -i ~/.config/omarchy/current/background -m fill")
-    hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-    hl.exec_cmd("omarchy-first-run")
-    hl.exec_cmd("omarchy-powerprofiles-init")
-    hl.exec_cmd("uwsm-app -- omarchy-hyprland-monitor-watch")
-    hl.exec_cmd("systemctl --user import-environment $(env | cut -d'=' -f 1)")
-    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-    hl.exec_cmd("sleep 2 && omarchy-hook post-boot")
-    hl.exec_cmd("nwg-dock-hyprland -i 48 -nolauncher -mb 10 -mt 2 -w 15 -d -hd 0 -hdd 20")
-    hl.exec_cmd("hyprpm reload")
-    hl.exec_cmd("vicinae server")
+	hl.exec_cmd("uwsm-app -- hypridle")
+	hl.exec_cmd("uwsm-app -- mako")
+	hl.exec_cmd("! omarchy-toggle-enabled waybar-off && uwsm-app -- waybar")
+	hl.exec_cmd("uwsm-app -- fcitx5 --disable notificationitem")
+	hl.exec_cmd("uwsm-app -- swaybg -i ~/.config/omarchy/current/background -m fill")
+	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+	hl.exec_cmd("omarchy-first-run")
+	hl.exec_cmd("omarchy-powerprofiles-init")
+	hl.exec_cmd("uwsm-app -- omarchy-hyprland-monitor-watch")
+	hl.exec_cmd("systemctl --user import-environment $(env | cut -d'=' -f 1)")
+	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+	hl.exec_cmd("sleep 2 && omarchy-hook post-boot")
+	hl.exec_cmd("nwg-dock-hyprland -i 48 -nolauncher -mb 10 -mt 2 -w 15 -d -hd 0 -hdd 20")
+	hl.exec_cmd("hyprpm reload")
+	hl.exec_cmd("vicinae server")
 end)
 
 -- Window rules ---------------------------------------------------------------
 hl.window_rule({ name = "suppress-maximize-events", match = { class = ".*" }, suppress_event = "maximize" })
 hl.window_rule({ match = { class = ".*" }, tag = "+default-opacity" })
-hl.window_rule({ name = "fix-xwayland-drags", match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false }, no_focus = true })
+hl.window_rule({
+	name = "fix-xwayland-drags",
+	match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false },
+	no_focus = true,
+})
 
 hl.window_rule({ match = { class = "^(1[p|P]assword)$" }, no_screen_share = true, tag = "+floating-window" })
 hl.window_rule({ match = { class = "^(Bitwarden)$" }, no_screen_share = true, tag = "+floating-window" })
-hl.window_rule({ match = { class = "chrome-nngceckbapebfimnlniiiahkandclblb-Default" }, no_screen_share = true, tag = "+floating-window" })
+hl.window_rule({
+	match = { class = "chrome-nngceckbapebfimnlniiiahkandclblb-Default" },
+	no_screen_share = true,
+	tag = "+floating-window",
+})
 
-hl.window_rule({ match = { class = "((google-)?[cC]hrom(e|ium)|[bB]rave-browser|[mM]icrosoft-edge|Vivaldi-stable|helium)" }, tag = "+chromium-based-browser" })
+hl.window_rule({
+	match = { class = "((google-)?[cC]hrom(e|ium)|[bB]rave-browser|[mM]icrosoft-edge|Vivaldi-stable|helium)" },
+	tag = "+chromium-based-browser",
+})
 hl.window_rule({ match = { class = "([fF]irefox|zen|librewolf)" }, tag = "+firefox-based-browser" })
 hl.window_rule({ match = { tag = "chromium-based-browser" }, tag = "-default-opacity" })
 hl.window_rule({ match = { tag = "firefox-based-browser" }, tag = "-default-opacity" })
-hl.window_rule({ match = { class = "(chrome-youtube.com__-Default|chrome-app.zoom.us__wc_home-Default)" }, tag = "-chromium-based-browser" })
-hl.window_rule({ match = { class = "(chrome-youtube.com__-Default|chrome-app.zoom.us__wc_home-Default)" }, tag = "-default-opacity" })
+hl.window_rule({
+	match = { class = "(chrome-youtube.com__-Default|chrome-app.zoom.us__wc_home-Default)" },
+	tag = "-chromium-based-browser",
+})
+hl.window_rule({
+	match = { class = "(chrome-youtube.com__-Default|chrome-app.zoom.us__wc_home-Default)" },
+	tag = "-default-opacity",
+})
 hl.window_rule({ match = { tag = "chromium-based-browser" }, tile = true })
 hl.window_rule({ match = { tag = "chromium-based-browser" }, opacity = "1.0 0.97" })
 hl.window_rule({ match = { tag = "firefox-based-browser" }, opacity = "1.0 0.97" })
@@ -276,25 +293,62 @@ hl.layer_rule({ match = { namespace = "selection" }, no_anim = true })
 hl.window_rule({ name = "jetbrains-focus", match = { class = "^(jetbrains-.*)$" }, no_follow_mouse = true })
 hl.window_rule({ match = { class = "(Share|localsend)" }, float = true, center = true, size = { 1100, 700 } })
 hl.window_rule({ name = "geforce", match = { class = "GeForceNOW" }, idle_inhibit = "fullscreen" })
-hl.window_rule({ name = "moonlight", match = { class = "com.moonlight_stream.Moonlight" }, fullscreen = true, idle_inhibit = "fullscreen" })
+hl.window_rule({
+	name = "moonlight",
+	match = { class = "com.moonlight_stream.Moonlight" },
+	fullscreen = true,
+	idle_inhibit = "fullscreen",
+})
 
 hl.window_rule({ match = { title = "(Picture.?in.?[Pp]icture)" }, tag = "+pip" })
 hl.window_rule({ match = { tag = "pip" }, tag = "-default-opacity" })
-hl.window_rule({ match = { tag = "pip" }, float = true, pin = true, size = { 600, 338 }, keep_aspect_ratio = true, border_size = 0, opacity = "1 1", move = { "monitor_w-window_w-40", "monitor_h*0.04" } })
+hl.window_rule({
+	match = { tag = "pip" },
+	float = true,
+	pin = true,
+	size = { 600, 338 },
+	keep_aspect_ratio = true,
+	border_size = 0,
+	opacity = "1 1",
+	move = { "monitor_w-window_w-40", "monitor_h*0.04" },
+})
 
 hl.window_rule({ match = { class = "qemu" }, tag = "-default-opacity", opacity = "1 1" })
-hl.window_rule({ match = { class = "com.libretro.RetroArch" }, fullscreen = true, tag = "-default-opacity", opacity = "1 1", idle_inhibit = "fullscreen" })
+hl.window_rule({
+	match = { class = "com.libretro.RetroArch" },
+	fullscreen = true,
+	tag = "-default-opacity",
+	opacity = "1 1",
+	idle_inhibit = "fullscreen",
+})
 hl.window_rule({ match = { class = "steam" }, float = true, idle_inhibit = "fullscreen" })
 hl.window_rule({ match = { class = "steam", title = "Steam" }, center = true, size = { 1100, 700 } })
 hl.window_rule({ match = { class = "steam.*" }, tag = "-default-opacity", opacity = "1 1" })
 hl.window_rule({ match = { class = "steam", title = "Friends List" }, size = { 460, 800 } })
 
 hl.window_rule({ match = { tag = "floating-window" }, float = true, center = true, size = { 875, 600 } })
-hl.window_rule({ match = { class = "(org.omarchy.bluetui|org.omarchy.impala|org.omarchy.wiremix|org.omarchy.btop|org.omarchy.terminal|org.omarchy.bash|org.codeberg.dnkl.foot|org.gnome.NautilusPreviewer|org.gnome.Evince|com.gabm.satty|Omarchy|About|TUI.float|imv|mpv)" }, tag = "+floating-window" })
-hl.window_rule({ match = { class = "(xdg-desktop-portal-gtk|sublime_text|DesktopEditors|org.gnome.Nautilus)", title = "^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*)" }, tag = "+floating-window" })
+hl.window_rule({
+	match = {
+		class = "(org.omarchy.bluetui|org.omarchy.impala|org.omarchy.wiremix|org.omarchy.btop|org.omarchy.terminal|org.omarchy.bash|org.codeberg.dnkl.foot|org.gnome.NautilusPreviewer|org.gnome.Evince|com.gabm.satty|Omarchy|About|TUI.float|imv|mpv)",
+	},
+	tag = "+floating-window",
+})
+hl.window_rule({
+	match = {
+		class = "(xdg-desktop-portal-gtk|sublime_text|DesktopEditors|org.gnome.Nautilus)",
+		title = "^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*)",
+	},
+	tag = "+floating-window",
+})
 hl.window_rule({ match = { class = "org.gnome.Calculator" }, float = true })
 hl.window_rule({ match = { class = "org.omarchy.screensaver" }, fullscreen = true, float = true, animation = "slide" })
-hl.window_rule({ match = { class = "^(zoom|vlc|mpv|org.kde.kdenlive|com.obsproject.Studio|com.github.PintaProject.Pinta|imv|org.gnome.NautilusPreviewer)$" }, tag = "-default-opacity", opacity = "1 1" })
+hl.window_rule({
+	match = {
+		class = "^(zoom|vlc|mpv|org.kde.kdenlive|com.obsproject.Studio|com.github.PintaProject.Pinta|imv|org.gnome.NautilusPreviewer)$",
+	},
+	tag = "-default-opacity",
+	opacity = "1 1",
+})
 hl.window_rule({ match = { tag = "pop" }, rounding = 8 })
 hl.window_rule({ match = { tag = "noidle" }, idle_inhibit = "always" })
 hl.window_rule({ match = { class = "org.telegram.desktop" }, focus_on_activate = false })
@@ -302,15 +356,33 @@ hl.window_rule({ match = { class = "(Alacritty|kitty|com.mitchellh.ghostty|foot)
 hl.window_rule({ match = { tag = "terminal" }, tag = "-default-opacity", opacity = "0.97 0.9" })
 hl.window_rule({ match = { class = "^Typora$", title = "^Print$" }, float = true, center = true })
 hl.layer_rule({ match = { namespace = "walker" }, no_anim = true })
-hl.window_rule({ match = { title = "WebcamOverlay" }, float = true, pin = true, no_initial_focus = true, no_dim = true, move = { "monitor_w-window_w-40", "monitor_h-window_h-40" } })
+hl.window_rule({
+	match = { title = "WebcamOverlay" },
+	float = true,
+	pin = true,
+	no_initial_focus = true,
+	no_dim = true,
+	move = { "monitor_w-window_w-40", "monitor_h-window_h-40" },
+})
 
-hl.window_rule({ name = "all-opaque-no-blur", match = { class = ".*" }, opaque = true, no_blur = true, opacity = "1.0 override 1.0 override" })
+hl.window_rule({
+	name = "all-opaque-no-blur",
+	match = { class = ".*" },
+	opaque = true,
+	no_blur = true,
+	opacity = "1.0 override 1.0 override",
+})
 hl.window_rule({ match = { class = "(Alacritty|kitty)" }, scroll_touchpad = 1.5 })
 hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, scroll_touchpad = 0.2 })
 hl.window_rule({ match = { class = "localsend" }, size = { 1100, 700 } })
 hl.window_rule({ match = { class = "org.gnome.Evince" }, size = { 1100, 700 } })
 hl.window_rule({ name = "scrcpy-size", match = { class = "^(scrcpy)$" }, float = true })
-hl.window_rule({ name = "gtk-portal", match = { class = "^(xdg-desktop-portal-gtk)$" }, float = true, size = { "monitor_w/2", "monitor_h/2" } })
+hl.window_rule({
+	name = "gtk-portal",
+	match = { class = "^(xdg-desktop-portal-gtk)$" },
+	float = true,
+	size = { "monitor_w/2", "monitor_h/2" },
+})
 hl.window_rule({ name = "hyprland-share-picker-float", match = { class = "^(hyprland-share-picker)$" }, float = true })
 hl.window_rule({ name = "scratchpad-blur", match = { workspace = "special:scratchpad" }, no_blur = false })
 hl.window_rule({ name = "tile-localsend", match = { class = "^(localsend)$" }, float = false, tile = true })
@@ -322,33 +394,93 @@ hl.layer_rule({ name = "dock-animation", match = { namespace = "nwg-dock" }, ani
 hl.layer_rule({ name = "vicinae-animation", match = { namespace = "vicinae" }, animation = "popin 80%" })
 
 -- Keybindings ----------------------------------------------------------------
-bind_exec("XF86AudioRaiseVolume", "Volume up", "omarchy-swayosd-client --output-volume raise", { locked = true, repeating = true })
-bind_exec("XF86AudioLowerVolume", "Volume down", "omarchy-swayosd-client --output-volume lower", { locked = true, repeating = true })
-bind_exec("XF86AudioMute", "Mute", "omarchy-swayosd-client --output-volume mute-toggle", { locked = true, repeating = true })
+bind_exec(
+	"XF86AudioRaiseVolume",
+	"Volume up",
+	"omarchy-swayosd-client --output-volume raise",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"XF86AudioLowerVolume",
+	"Volume down",
+	"omarchy-swayosd-client --output-volume lower",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"XF86AudioMute",
+	"Mute",
+	"omarchy-swayosd-client --output-volume mute-toggle",
+	{ locked = true, repeating = true }
+)
 bind_exec("XF86AudioMicMute", "Mute microphone", "omarchy-audio-input-mute", { locked = true, repeating = true })
 bind_exec("XF86MonBrightnessUp", "Brightness up", "omarchy-brightness-display +5%", { locked = true, repeating = true })
-bind_exec("XF86MonBrightnessDown", "Brightness down", "omarchy-brightness-display 5%-", { locked = true, repeating = true })
-bind_exec("SHIFT + XF86MonBrightnessUp", "Brightness maximum", "omarchy-brightness-display 100%", { locked = true, repeating = true })
-bind_exec("SHIFT + XF86MonBrightnessDown", "Brightness minimum", "omarchy-brightness-display 1%", { locked = true, repeating = true })
-bind_exec("XF86KbdBrightnessUp", "Keyboard brightness up", "omarchy-brightness-keyboard up", { locked = true, repeating = true })
-bind_exec("XF86KbdBrightnessDown", "Keyboard brightness down", "omarchy-brightness-keyboard down", { locked = true, repeating = true })
+bind_exec(
+	"XF86MonBrightnessDown",
+	"Brightness down",
+	"omarchy-brightness-display 5%-",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"SHIFT + XF86MonBrightnessUp",
+	"Brightness maximum",
+	"omarchy-brightness-display 100%",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"SHIFT + XF86MonBrightnessDown",
+	"Brightness minimum",
+	"omarchy-brightness-display 1%",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"XF86KbdBrightnessUp",
+	"Keyboard brightness up",
+	"omarchy-brightness-keyboard up",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"XF86KbdBrightnessDown",
+	"Keyboard brightness down",
+	"omarchy-brightness-keyboard down",
+	{ locked = true, repeating = true }
+)
 bind_exec("XF86KbdLightOnOff", "Keyboard backlight cycle", "omarchy-brightness-keyboard cycle", { locked = true })
 bind_exec("XF86TouchpadToggle", "Toggle touchpad", "omarchy-toggle-touchpad", { locked = true })
 bind_exec("XF86TouchpadOn", "Enable touchpad", "omarchy-toggle-touchpad on", { locked = true })
 bind_exec("XF86TouchpadOff", "Disable touchpad", "omarchy-toggle-touchpad off", { locked = true })
-bind_exec("ALT + XF86AudioRaiseVolume", "Volume up precise", "omarchy-swayosd-client --output-volume +1", { locked = true, repeating = true })
-bind_exec("ALT + XF86AudioLowerVolume", "Volume down precise", "omarchy-swayosd-client --output-volume -1", { locked = true, repeating = true })
-bind_exec("ALT + XF86MonBrightnessUp", "Brightness up precise", "omarchy-brightness-display +1%", { locked = true, repeating = true })
-bind_exec("ALT + XF86MonBrightnessDown", "Brightness down precise", "omarchy-brightness-display 1%-", { locked = true, repeating = true })
+bind_exec(
+	"ALT + XF86AudioRaiseVolume",
+	"Volume up precise",
+	"omarchy-swayosd-client --output-volume +1",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"ALT + XF86AudioLowerVolume",
+	"Volume down precise",
+	"omarchy-swayosd-client --output-volume -1",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"ALT + XF86MonBrightnessUp",
+	"Brightness up precise",
+	"omarchy-brightness-display +1%",
+	{ locked = true, repeating = true }
+)
+bind_exec(
+	"ALT + XF86MonBrightnessDown",
+	"Brightness down precise",
+	"omarchy-brightness-display 1%-",
+	{ locked = true, repeating = true }
+)
 bind_exec("XF86AudioNext", "Next track", "omarchy-swayosd-client --playerctl next", { locked = true })
 bind_exec("XF86AudioPause", "Pause", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
 bind_exec("XF86AudioPlay", "Play", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
 bind_exec("XF86AudioPrev", "Previous track", "omarchy-swayosd-client --playerctl previous", { locked = true })
 bind_exec("SUPER + XF86AudioMute", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
 
-bind("SUPER + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "Insert" }), "Universal copy")
-bind("SUPER + V", hl.dsp.send_shortcut({ mods = "SHIFT", key = "Insert" }), "Universal paste")
-bind("SUPER + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X" }), "Universal cut")
+bind("SUPER + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "Insert", window = "activewindow" }), "Universal copy")
+bind("SUPER + V", hl.dsp.send_shortcut({ mods = "SHIFT", key = "Insert", window = "activewindow" }), "Universal paste")
+bind("SUPER + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }), "Universal cut")
 bind_exec("SUPER + CTRL + V", "Clipboard manager", "omarchy-launch-walker -m clipboard")
 
 bind("SUPER + W", hl.dsp.window.close(), "Close window")
@@ -357,7 +489,11 @@ bind("SUPER + J", hl.dsp.layout("togglesplit"), "Toggle window split")
 bind("SUPER + P", hl.dsp.window.pseudo(), "Pseudo window")
 bind("SUPER + T", hl.dsp.window.float({ action = "toggle" }), "Toggle window floating/tiling")
 bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }), "Full screen")
-bind("SUPER + CTRL + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }), "Tiled full screen")
+bind(
+	"SUPER + CTRL + F",
+	hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }),
+	"Tiled full screen"
+)
 bind("SUPER + ALT + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), "Full width")
 bind_exec("SUPER + O", "Pop window out (float & pin)", "omarchy-hyprland-window-pop")
 bind_exec("SUPER + L", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle")
@@ -368,11 +504,19 @@ bind("SUPER + UP", hl.dsp.focus({ direction = "u" }), "Focus on above window")
 bind("SUPER + DOWN", hl.dsp.focus({ direction = "d" }), "Focus on below window")
 
 for i = 1, 10 do
-    local keycode = "code:" .. (i + 9)
-    bind("SUPER + " .. keycode, hl.dsp.focus({ workspace = i }), "Switch to workspace " .. i)
-    bind("SUPER + SHIFT + " .. keycode, hl.dsp.window.move({ workspace = i }), "Move window to workspace " .. i)
-    bind("SUPER + SHIFT + ALT + " .. keycode, hl.dsp.window.move({ workspace = i }), "Move window silently to workspace " .. i)
-    bind("SUPER + CTRL + SHIFT + " .. keycode, hl.dsp.layout("movecoltoworkspace " .. i), "Move column to workspace " .. i)
+	local keycode = "code:" .. (i + 9)
+	bind("SUPER + " .. keycode, hl.dsp.focus({ workspace = i }), "Switch to workspace " .. i)
+	bind("SUPER + SHIFT + " .. keycode, hl.dsp.window.move({ workspace = i }), "Move window to workspace " .. i)
+	bind(
+		"SUPER + SHIFT + ALT + " .. keycode,
+		hl.dsp.window.move({ workspace = i }),
+		"Move window silently to workspace " .. i
+	)
+	bind(
+		"SUPER + CTRL + SHIFT + " .. keycode,
+		hl.dsp.layout("movecoltoworkspace " .. i),
+		"Move column to workspace " .. i
+	)
 end
 
 bind("SUPER + S", hl.dsp.workspace.toggle_special("scratchpad"), "Toggle scratchpad")
@@ -389,7 +533,11 @@ bind("SUPER + SHIFT + RIGHT", hl.dsp.window.swap({ direction = "r" }), "Swap win
 bind("SUPER + SHIFT + UP", hl.dsp.window.swap({ direction = "u" }), "Swap window up")
 bind("SUPER + SHIFT + DOWN", hl.dsp.window.swap({ direction = "d" }), "Swap window down")
 bind("ALT + TAB", dispatch_many(hl.dsp.window.cycle_next(), hl.dsp.window.bring_to_top()), "Focus on next window")
-bind("ALT + SHIFT + TAB", dispatch_many(hl.dsp.window.cycle_next({ next = false }), hl.dsp.window.bring_to_top()), "Focus on previous window")
+bind(
+	"ALT + SHIFT + TAB",
+	dispatch_many(hl.dsp.window.cycle_next({ next = false }), hl.dsp.window.bring_to_top()),
+	"Focus on previous window"
+)
 bind("CTRL + ALT + TAB", hl.dsp.focus({ monitor = "+1" }), "Focus on next monitor")
 bind("CTRL + ALT + SHIFT + TAB", hl.dsp.focus({ monitor = "-1" }), "Focus on previous monitor")
 bind("SUPER + code:20", hl.dsp.window.resize({ x = -100, y = 0, relative = true }), "Expand window left")
@@ -413,10 +561,14 @@ bind("SUPER + CTRL + RIGHT", hl.dsp.group.next(), "Move grouped window focus rig
 bind("SUPER + ALT + mouse_down", hl.dsp.group.next(), "Next window in group")
 bind("SUPER + ALT + mouse_up", hl.dsp.group.prev(), "Previous window in group")
 for i = 1, 5 do
-    bind("SUPER + ALT + code:" .. (i + 9), hl.dsp.group.active({ index = i }), "Switch to group window " .. i)
+	bind("SUPER + ALT + code:" .. (i + 9), hl.dsp.group.active({ index = i }), "Switch to group window " .. i)
 end
 bind_exec("SUPER + code:61", "Cycle monitor scaling", "omarchy-hyprland-monitor-scaling-cycle")
-bind_exec("SUPER + ALT + code:61", "Cycle monitor scaling backwards", "omarchy-hyprland-monitor-scaling-cycle --reverse")
+bind_exec(
+	"SUPER + ALT + code:61",
+	"Cycle monitor scaling backwards",
+	"omarchy-hyprland-monitor-scaling-cycle --reverse"
+)
 
 bind_exec("SUPER + SPACE", "Launch apps", "omarchy-launch-walker")
 bind_exec("SUPER + CTRL + E", "Emoji picker", "omarchy-launch-walker -m symbols")
@@ -434,7 +586,11 @@ bind_exec("SUPER + CTRL + SPACE", "Theme background menu", "omarchy-menu backgro
 bind_exec("SUPER + SHIFT + CTRL + SPACE", "Theme menu", "omarchy-menu theme")
 bind_exec("SUPER + BACKSPACE", "Toggle window transparency", "omarchy-hyprland-window-transparency-toggle")
 bind_exec("SUPER + SHIFT + BACKSPACE", "Toggle window gaps", "omarchy-hyprland-window-gaps-toggle")
-bind_exec("SUPER + CTRL + BACKSPACE", "Toggle single-window square aspect", "omarchy-hyprland-window-single-square-aspect-toggle")
+bind_exec(
+	"SUPER + CTRL + BACKSPACE",
+	"Toggle single-window square aspect",
+	"omarchy-hyprland-window-single-square-aspect-toggle"
+)
 bind_exec("SUPER + COMMA", "Dismiss last notification", "makoctl dismiss")
 bind_exec("SUPER + SHIFT + COMMA", "Dismiss all notifications", "makoctl dismiss --all")
 bind_exec("SUPER + CTRL + COMMA", "Toggle silencing notifications", "omarchy-toggle-notification-silencing")
@@ -443,8 +599,17 @@ bind_exec("SUPER + SHIFT + ALT + COMMA", "Restore last notification", "makoctl r
 bind_exec("SUPER + CTRL + I", "Toggle locking on idle", "omarchy-toggle-idle")
 bind_exec("SUPER + CTRL + N", "Toggle nightlight", "omarchy-toggle-nightlight")
 bind_exec("SUPER + CTRL + Delete", "Toggle laptop display", "omarchy-hyprland-monitor-internal toggle")
-bind_exec("SUPER + CTRL + ALT + Delete", "Toggle laptop display mirroring", "omarchy-hyprland-monitor-internal-mirror toggle")
-bind_exec("switch:on:Lid Switch", nil, "omarchy-hw-external-monitors && omarchy-hyprland-monitor-internal off", { locked = true })
+bind_exec(
+	"SUPER + CTRL + ALT + Delete",
+	"Toggle laptop display mirroring",
+	"omarchy-hyprland-monitor-internal-mirror toggle"
+)
+bind_exec(
+	"switch:on:Lid Switch",
+	nil,
+	"omarchy-hw-external-monitors && omarchy-hyprland-monitor-internal off",
+	{ locked = true }
+)
 bind_exec("switch:off:Lid Switch", nil, "omarchy-hyprland-monitor-internal on", { locked = true })
 bind_exec("PRINT", "Screenshot", "omarchy-capture-screenshot")
 bind_exec("ALT + PRINT", "Screenrecording", "omarchy-menu screenrecord")
@@ -455,7 +620,11 @@ bind_exec("SUPER + CTRL + PERIOD", "Transcode", "omarchy-transcode")
 bind_exec("SUPER + CTRL + R", "Set reminder", "omarchy-menu reminder-set")
 bind_exec("SUPER + CTRL + ALT + R", "Show reminders", "omarchy-reminder show")
 bind_exec("SUPER + SHIFT + CTRL + R", "Clear reminders", "omarchy-reminder clear")
-bind_exec("SUPER + CTRL + ALT + T", "Show time", [[notify-send -u low "    $(date +"%A %H:%M  ·  %d %B %Y  ·  Week %V")"]])
+bind_exec(
+	"SUPER + CTRL + ALT + T",
+	"Show time",
+	[[notify-send -u low "    $(date +"%A %H:%M  ·  %d %B %Y  ·  Week %V")"]]
+)
 bind_exec("SUPER + CTRL + ALT + B", "Show battery remaining", [[notify-send -u low "$(omarchy-battery-status)"]])
 bind_exec("SUPER + CTRL + ALT + W", "Show weather", [[notify-send -u low "$(omarchy-weather-status)"]])
 bind_exec("SUPER + CTRL + A", "Audio controls", "omarchy-launch-audio")
@@ -465,7 +634,11 @@ bind_exec("SUPER + CTRL + T", "Activity", "omarchy-launch-tui btop")
 bind_exec("SUPER + CTRL + X", "Toggle dictation", "voxtype record toggle")
 bind_exec("F9", "Start dictation (push-to-talk)", "voxtype record start")
 bind_exec("F9", "Stop dictation (push-to-talk)", "voxtype record stop", { release = true })
-bind_exec("SUPER + CTRL + Z", "Zoom in", "hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float + 1')")
+bind_exec(
+	"SUPER + CTRL + Z",
+	"Zoom in",
+	"hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float + 1')"
+)
 bind_exec("SUPER + CTRL + ALT + Z", "Reset zoom", "hyprctl keyword cursor:zoom_factor 1")
 bind_exec("SUPER + CTRL + L", "Lock system", "omarchy-system-lock")
 
@@ -475,33 +648,54 @@ bind_exec("SUPER + RETURN", "Tmux", [[uwsm-app -- xdg-terminal-exec --dir="$(oma
 bind_exec("SUPER + SHIFT + RETURN", "Browser", "omarchy-launch-browser")
 bind_exec("SUPER + SHIFT + B", "Browser", browser)
 bind_exec("SUPER + SHIFT + F", "File manager", "uwsm-app -- nautilus --new-window")
-bind_exec("SUPER + ALT + SHIFT + F", "File manager (cwd)", [[uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"]])
+bind_exec(
+	"SUPER + ALT + SHIFT + F",
+	"File manager (cwd)",
+	[[uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"]]
+)
 bind_exec("SUPER + SHIFT + M", "Music", "omarchy-launch-or-focus spotify")
 bind_exec("SUPER + SHIFT + N", "Editor", "omarchy-launch-editor")
 bind_exec("SUPER + SHIFT + V", "Discord", "vesktop")
 bind_exec("SUPER + SHIFT + O", "Obsidian", [[omarchy-launch-or-focus "^obsidian$" "uwsm-app -- obsidian"]])
 
 bind_exec("SUPER + D", nil, "$(omarchy-restart-nwg-dock)")
-bind_exec("SUPER + grave", "Window switch", "vicinae vicinae://launch/wm/switch-windows")
-
-hl.unbind("SUPER + SPACE")
-bind_exec("SUPER + SPACE", nil, "vicinae toggle")
-hl.unbind("SUPER + ALT + SPACE")
-bind_exec("SUPER + ALT + SPACE", nil, "vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/index")
-hl.unbind("SUPER + CTRL + E")
-bind_exec("SUPER + CTRL + E", "Emoji picker", "vicinae vicinae://launch/core/search-emojis")
-hl.unbind("SUPER + ESCAPE")
-bind_exec("SUPER + ESCAPE", "Power profiles", "vicinae vicinae://launch/@botkooper/store.vicinae.power-profile/power-profile")
-hl.unbind("SUPER + CTRL + A")
-bind_exec("SUPER + CTRL + A", "Audio controls", "vicinae vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/pulseaudio")
-hl.unbind("SUPER + CTRL + W")
-bind_exec("SUPER + CTRL + W", "Wifi controls", "vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi")
-hl.unbind("SUPER + CTRL + B")
-bind_exec("SUPER + CTRL + B", "Bluetooth", "vicinae vicinae://extensions/Gelei/bluetooth")
-hl.unbind("SUPER + CTRL + V")
-bind_exec("SUPER + CTRL + V", "Clipboard", "vicinae vicinae://launch/clipboard/history")
-hl.unbind("XF86PowerOff")
-bind_exec("XF86PowerOff", "Power menu", "vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/system", { locked = true })
+-- bind_exec("SUPER + grave", "Window switch", "vicinae vicinae://launch/wm/switch-windows")
+--
+-- hl.unbind("SUPER + SPACE")
+-- bind_exec("SUPER + SPACE", nil, "vicinae toggle")
+-- hl.unbind("SUPER + ALT + SPACE")
+-- bind_exec("SUPER + ALT + SPACE", nil, "vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/index")
+-- hl.unbind("SUPER + CTRL + E")
+-- bind_exec("SUPER + CTRL + E", "Emoji picker", "vicinae vicinae://launch/core/search-emojis")
+-- hl.unbind("SUPER + ESCAPE")
+-- bind_exec(
+-- 	"SUPER + ESCAPE",
+-- 	"Power profiles",
+-- 	"vicinae vicinae://launch/@botkooper/store.vicinae.power-profile/power-profile"
+-- )
+-- hl.unbind("SUPER + CTRL + A")
+-- bind_exec(
+-- 	"SUPER + CTRL + A",
+-- 	"Audio controls",
+-- 	"vicinae vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/pulseaudio"
+-- )
+-- hl.unbind("SUPER + CTRL + W")
+-- bind_exec(
+-- 	"SUPER + CTRL + W",
+-- 	"Wifi controls",
+-- 	"vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi"
+-- )
+-- hl.unbind("SUPER + CTRL + B")
+-- bind_exec("SUPER + CTRL + B", "Bluetooth", "vicinae vicinae://extensions/Gelei/bluetooth")
+-- hl.unbind("SUPER + CTRL + V")
+-- bind_exec("SUPER + CTRL + V", "Clipboard", "vicinae vicinae://launch/clipboard/history")
+-- hl.unbind("XF86PowerOff")
+-- bind_exec(
+-- 	"XF86PowerOff",
+-- 	"Power menu",
+-- 	"vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/system",
+-- 	{ locked = true }
+-- )
 
 hl.unbind("SUPER + LEFT")
 hl.unbind("SUPER + RIGHT")
@@ -541,9 +735,33 @@ bind("SUPER + bracketleft", hl.dsp.layout("move -col"), "Scroll layout left")
 bind("SUPER + bracketright", hl.dsp.layout("move +col"), "Scroll layout right")
 
 -- Trackpad gestures ----------------------------------------------------------
-hl.gesture({ fingers = 3, direction = "up", action = function() hl.dispatch(hl.dsp.focus({ workspace = "-1" })) end })
-hl.gesture({ fingers = 3, direction = "down", action = function() hl.dispatch(hl.dsp.focus({ workspace = "+1" })) end })
-hl.gesture({ fingers = 3, direction = "left", action = function() hl.dispatch(hl.dsp.layout("move -col")) end })
-hl.gesture({ fingers = 3, direction = "right", action = function() hl.dispatch(hl.dsp.layout("move +col")) end })
+hl.gesture({
+	fingers = 3,
+	direction = "up",
+	action = function()
+		hl.dispatch(hl.dsp.focus({ workspace = "-1" }))
+	end,
+})
+hl.gesture({
+	fingers = 3,
+	direction = "down",
+	action = function()
+		hl.dispatch(hl.dsp.focus({ workspace = "+1" }))
+	end,
+})
+hl.gesture({
+	fingers = 3,
+	direction = "left",
+	action = function()
+		hl.dispatch(hl.dsp.layout("move -col"))
+	end,
+})
+hl.gesture({
+	fingers = 3,
+	direction = "right",
+	action = function()
+		hl.dispatch(hl.dsp.layout("move +col"))
+	end,
+})
 hl.gesture({ fingers = 4, direction = "up", action = "special", workspace_name = "scratchpad" })
 hl.gesture({ fingers = 4, direction = "down", action = "special", workspace_name = "scratchpad" })
