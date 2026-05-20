@@ -659,43 +659,43 @@ bind_exec("SUPER + SHIFT + V", "Discord", "vesktop")
 bind_exec("SUPER + SHIFT + O", "Obsidian", [[omarchy-launch-or-focus "^obsidian$" "uwsm-app -- obsidian"]])
 
 bind_exec("SUPER + D", nil, "$(omarchy-restart-nwg-dock)")
--- bind_exec("SUPER + grave", "Window switch", "vicinae vicinae://launch/wm/switch-windows")
---
--- hl.unbind("SUPER + SPACE")
--- bind_exec("SUPER + SPACE", nil, "vicinae toggle")
--- hl.unbind("SUPER + ALT + SPACE")
--- bind_exec("SUPER + ALT + SPACE", nil, "vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/index")
--- hl.unbind("SUPER + CTRL + E")
--- bind_exec("SUPER + CTRL + E", "Emoji picker", "vicinae vicinae://launch/core/search-emojis")
--- hl.unbind("SUPER + ESCAPE")
--- bind_exec(
--- 	"SUPER + ESCAPE",
--- 	"Power profiles",
--- 	"vicinae vicinae://launch/@botkooper/store.vicinae.power-profile/power-profile"
--- )
--- hl.unbind("SUPER + CTRL + A")
--- bind_exec(
--- 	"SUPER + CTRL + A",
--- 	"Audio controls",
--- 	"vicinae vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/pulseaudio"
--- )
--- hl.unbind("SUPER + CTRL + W")
--- bind_exec(
--- 	"SUPER + CTRL + W",
--- 	"Wifi controls",
--- 	"vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi"
--- )
--- hl.unbind("SUPER + CTRL + B")
--- bind_exec("SUPER + CTRL + B", "Bluetooth", "vicinae vicinae://extensions/Gelei/bluetooth")
--- hl.unbind("SUPER + CTRL + V")
--- bind_exec("SUPER + CTRL + V", "Clipboard", "vicinae vicinae://launch/clipboard/history")
--- hl.unbind("XF86PowerOff")
--- bind_exec(
--- 	"XF86PowerOff",
--- 	"Power menu",
--- 	"vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/system",
--- 	{ locked = true }
--- )
+bind_exec("SUPER + grave", "Window switch", "vicinae vicinae://launch/wm/switch-windows")
+
+hl.unbind("SUPER + SPACE")
+bind_exec("SUPER + SPACE", nil, "vicinae toggle")
+hl.unbind("SUPER + ALT + SPACE")
+bind_exec("SUPER + ALT + SPACE", nil, "vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/index")
+hl.unbind("SUPER + CTRL + E")
+bind_exec("SUPER + CTRL + E", "Emoji picker", "vicinae vicinae://launch/core/search-emojis")
+hl.unbind("SUPER + ESCAPE")
+bind_exec(
+	"SUPER + ESCAPE",
+	"Power profiles",
+	"vicinae vicinae://launch/@botkooper/store.vicinae.power-profile/power-profile"
+)
+hl.unbind("SUPER + CTRL + A")
+bind_exec(
+	"SUPER + CTRL + A",
+	"Audio controls",
+	"vicinae vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/pulseaudio"
+)
+hl.unbind("SUPER + CTRL + W")
+bind_exec(
+	"SUPER + CTRL + W",
+	"Wifi controls",
+	"vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi"
+)
+hl.unbind("SUPER + CTRL + B")
+bind_exec("SUPER + CTRL + B", "Bluetooth", "vicinae vicinae://extensions/Gelei/bluetooth")
+hl.unbind("SUPER + CTRL + V")
+bind_exec("SUPER + CTRL + V", "Clipboard", "vicinae vicinae://launch/clipboard/history")
+hl.unbind("XF86PowerOff")
+bind_exec(
+	"XF86PowerOff",
+	"Power menu",
+	"vicinae vicinae://launch/@codingcodax/store.vicinae.omarchy-menu/system",
+	{ locked = true }
+)
 
 hl.unbind("SUPER + LEFT")
 hl.unbind("SUPER + RIGHT")
