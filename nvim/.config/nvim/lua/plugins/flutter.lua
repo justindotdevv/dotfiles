@@ -23,10 +23,6 @@ return {
         enabled = true,
       },
       lsp = {
-        color = {
-          enabled = true,
-          virtual_text = true,
-        },
         settings = {
           showTodos = true,
           completeFunctionCalls = true,
