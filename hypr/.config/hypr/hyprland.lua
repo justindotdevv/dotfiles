@@ -50,7 +50,7 @@ end
 
 -- Monitors -------------------------------------------------------------------
 hl.env("GDK_SCALE", "auto")
-hl.monitor({ output = "", mode = "2160x1440@60", position = "auto", scale = "1" })
+hl.monitor({ output = "", mode = "2160x1440@60", position = "auto", scale = "1.05" })
 
 -- Environment ----------------------------------------------------------------
 hl.env("XCURSOR_SIZE", "24")
