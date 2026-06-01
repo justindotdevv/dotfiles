@@ -1,0 +1,78 @@
+
+##############################################
+#                                            #
+#             Flexoki Light Theme            #
+#                                            #
+##############################################
+
+# This theme uses the Flexoki color palette by Steph Ango.
+# https://stephango.com/flexoki
+
+# This contains the theme config file for superfile! For more details see:
+# https://superfile.dev/configure/custom-theme/
+
+###############################################################################
+#                           Code Syntax Highlighting                          #
+###############################################################################
+
+# Find one you like at: https://github.com/alecthomas/chroma/blob/master/styles.
+
+code_syntax_highlight = "github"
+
+###############################################################################
+#                                 Base Colors                                 #
+###############################################################################
+
+#-- Full Screen
+full_screen_fg = "#100F0F"
+full_screen_bg = "#FFFCF0"
+
+#-- Gradient
+# Note: This currently only supports two colors.
+gradient_color = ["#FFFCF0", "#F2F0E9"]
+
+#-- File Panel
+file_panel_fg = "#100F0F"
+file_panel_bg = "#FFFCF0"
+file_panel_border = "#CECDCA"
+file_panel_border_active = "#205EA6"
+file_panel_top_directory_icon = "#66800B"
+file_panel_top_path = "#24837B"
+file_panel_item_selected_fg = "#100F0F"
+file_panel_item_selected_bg = "#F2F0E9"
+
+#-- Footer
+footer_fg = "#100F0F"
+footer_bg = "#FFFCF0"
+footer_border = "#CECDCA"
+footer_border_active = "#205EA6"
+
+#-- Sidebar
+sidebar_fg = "#100F0F"
+sidebar_bg = "#FFFCF0"
+sidebar_title = "#100F0F"
+sidebar_border = "#FFFCF0"
+sidebar_border_active = "#205EA6"
+sidebar_item_selected_fg = "#205EA6"
+sidebar_item_selected_bg = "#FFFCF0"
+sidebar_divider = "#CECDCA"
+
+#-- Modals
+modal_fg = "#100F0F"
+modal_bg = "#FFFCF0"
+modal_border_active = "#CECDCA"
+modal_cancel_fg = "#FFFCF0"
+modal_cancel_bg = "#AF3029"
+modal_confirm_fg = "#FFFCF0"
+modal_confirm_bg = "#66800B"
+
+#-- Help Menu
+help_menu_hotkey = "#205EA6"
+help_menu_title = "#AF3029"
+
+#-- Special
+cursor = "#100F0F"
+correct = "#66800B"
+error = "#AF3029"
+hint = "#24837B"
+cancel = "#AF3029"
