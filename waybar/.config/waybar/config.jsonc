@@ -4,39 +4,39 @@
   "reload_style_on_change": true,
   "position": "top",
   "margin-top": 7,
-  "margin-left": 100,
-  "margin-right": 100,
+  "margin-left": 950,
+  "margin-right": 950,
   "margin-bottom": 0,
   "modules-left": [
-    "custom/omarchy",
-    "custom/separator",
-    "hyprland/workspaces",
-    "custom/separator",
-    "cpu",
-    "temperature",
-    "memory",
-    "custom/separator",
-    "idle_inhibitor",
-    "privacy",
-    "custom/webcam",
-    "mpris"
+    // "custom/omarchy",
+    // "custom/separator",
+    // "hyprland/workspaces",
+    // "custom/separator",
+    // "cpu",
+    // "temperature",
+    // "memory",
+    // "custom/separator",
+    // "idle_inhibitor",
+    "clock"
   ],
   "modules-center": [
-    "clock",
+    "privacy",
+    "custom/webcam",
+    // "mpris",
     // "group/weather",
     "custom/voxtype",
     "custom/update",
     "custom/screenrecording-indicator"
   ],
   "modules-right": [
-    "group/tray-expander",
-    "custom/separator",
-    "backlight",
-    "custom/updatespacman",
-    "bluetooth",
-    "network",
-    "power-profiles-daemon",
-    "pulseaudio#output",
+    // "group/tray-expander",
+    // "custom/separator",
+    // "backlight",
+    // "custom/updatespacman",
+    // "bluetooth",
+    // "network",
+    // "power-profiles-daemon",
+    // "pulseaudio#output",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -135,7 +135,7 @@
     "format": "{:%a %d %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip-format": "<span>{calendar}</span>",
-    "tooltip": false,
+    "tooltip": true,
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -169,10 +169,10 @@
     "on-click": "omarchy-launch-floating-terminal-with-presentation wifitui"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-discharging": "{capacity}% {icon}",
-    "format-charging": "{capacity}% {icon}",
-    "format-plugged": " {capacity}%",
+    "format": "{capacity}%",
+    "format-discharging": "{capacity}%",
+    "format-charging": "{capacity}%",
+    "format-plugged": "{capacity}%",
     "format-icons": {
       "charging": [
         "󰢜",
@@ -199,7 +199,7 @@
         "󰁹"
       ]
     },
-    "format-full": "{capacity}% 󰂅",
+    "format-full": "{capacity}%",
     "tooltip-format-discharging": "{timeTo}",
     "tooltip-format-charging": "{timeTo}",
     "tooltip": false,
