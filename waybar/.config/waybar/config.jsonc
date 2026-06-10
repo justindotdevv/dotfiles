@@ -4,8 +4,8 @@
   "reload_style_on_change": true,
   "position": "top",
   "margin-top": 7,
-  "margin-left": 950,
-  "margin-right": 950,
+  "margin-left": 1010,
+  "margin-right": 1010,
   "margin-bottom": 0,
   "modules-left": [
     // "custom/omarchy",
@@ -20,13 +20,14 @@
     "clock"
   ],
   "modules-center": [
-    "privacy",
-    "custom/webcam",
+    // "privacy",
+    // "custom/webcam",
     // "mpris",
     // "group/weather",
-    "custom/voxtype",
-    "custom/update",
-    "custom/screenrecording-indicator"
+    // "custom/voxtype",
+    // "custom/update",
+    // "custom/screenrecording-indicator"
+    ""
   ],
   "modules-right": [
     // "group/tray-expander",
@@ -132,7 +133,7 @@
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
-    "format": "{:%a %d %H:%M}",
+    "format": "{:%H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip-format": "<span>{calendar}</span>",
     "tooltip": true,
