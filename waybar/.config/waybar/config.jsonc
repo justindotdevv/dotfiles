@@ -13,27 +13,27 @@
     "hyprland/workspaces",
     // "custom/separator",
     // "cpu",
+    "custom/updatespacman"
     // "temperature",
     // "memory",
     // "custom/separator",
-    "idle_inhibitor",
+    // "idle_inhibitor",
   ],
   "modules-center": [
-    // "privacy",
-    // "custom/webcam",
+    "privacy",
+    "custom/webcam",
     // "mpris",
     // "group/weather",
-    // "custom/voxtype",
-    // "custom/update",
-    // "custom/screenrecording-indicator"
+    "custom/voxtype",
+    "custom/update",
+    "custom/screenrecording-indicator",
     "clock"
   ],
   "modules-right": [
     // "group/tray-expander",
     // "custom/separator",
     // "backlight",
-    "custom/updatespacman",
-    "bluetooth",
+    // "bluetooth",
     "network",
     // "power-profiles-daemon",
     "pulseaudio#output",
@@ -95,8 +95,8 @@
     }
   },
   "cpu": {
-    "interval": 1,
-    "format": "cpu: {usage}%",
+    "interval": 2,
+    "format": "{usage}%",
     "format-icons": [],
     "tooltip": false,
     "on-click": "omarchy-launch-or-focus-tui btop"
@@ -369,7 +369,7 @@
   "group/weather": {
     "orientation": "inherit",
     "modules": [
-      "custom/separator",
+      // "custom/separator",
       "custom/weather"
     ]
   },
