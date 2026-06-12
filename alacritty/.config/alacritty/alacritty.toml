@@ -4,17 +4,17 @@ general.import = ["~/.config/omarchy/current/theme/alacritty.toml"]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "Google Sans Code NF" }
-bold = { family = "Google Sans Code NF", style = "Bold" }
-italic = { family = "Google Sans Code NF", style = "Italic" }
-bold_italic = { family = "Google Sans Code NF", style = "Bold Italic" }
+normal = { family = "GeistMono Nerd Font" }
+bold = { family = "GeistMono Nerd Font", style = "Bold" }
+italic = { family = "GeistMono Nerd Font", style = "Italic" }
+bold_italic = { family = "GeistMono Nerd Font", style = "Bold Italic" }
 size = 11
 
 [window]
-padding.x = 14
-padding.y = 14
+padding.x = 12
+padding.y = 12
 decorations = "None"
-opacity = 1
+opacity = 0.8
 
 [keyboard]
 bindings = [
