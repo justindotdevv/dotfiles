@@ -87,23 +87,11 @@ open() {
 }
 
 alias helium='helium-browser'
-alias dl='yt-dlp'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 alias c='opencode'
 alias cx='printf "\033[2J\033[3J\033[H" && claude --allow-dangerously-skip-permissions'
 alias d='docker'
-alias r='rails'
 alias s='spf'
-alias t='tmux attach || tmux new'
-n() { if [[ $# -eq 0 ]]; then command nvim . ; else command nvim "$@"; fi; }
 alias g='git'
-
-# --- Omarchy functions ---
-# for f in $OMARCHY_PATH/default/bash/fns/*; do source "$f"; done
-
-# --- Personal overrides ---
 alias ts='tailscale'
 alias :so='source ~/.zshrc'
 alias :q='exit'
@@ -115,14 +103,13 @@ alias lg='lazygit'
 alias in='omarchy-pkg-aur-install'
 
 gac() {
-  git add -u && git commit -m "$(lumen draft)"
+  git add . && git commit -m "$(lumen draft)"
 }
 
 faf() {
   fastfetch -l arch
 }
 
-# Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
 
@@ -152,9 +139,6 @@ fi
 if command -v fzf &> /dev/null; then
   source <(fzf --zsh 2>/dev/null) || true
 fi
-
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
 
 # --- Plugins (syntax highlighting + autosuggestions) ---
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
