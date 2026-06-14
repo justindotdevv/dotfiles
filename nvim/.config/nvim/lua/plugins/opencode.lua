@@ -28,48 +28,6 @@ return {
       },
     },
     config = function()
-      local opencode_port = 4892
-      local opencode_pane_id = nil
-
-      ---@type opencode.Opts
-      vim.g.opencode_opts = {
-        server = {
-          port = opencode_port,
-          start = function()
-            local pane =
-              vim.fn.system("tmux split-window -h -l 35% -P -F '#{pane_id}' 'opencode --port " .. opencode_port .. "'")
-            opencode_pane_id = vim.trim(pane)
-          end,
-          stop = function()
-            if opencode_pane_id then
-              vim.fn.system("tmux kill-pane -t " .. opencode_pane_id)
-              opencode_pane_id = nil
-            end
-          end,
-          toggle = function()
-            if opencode_pane_id then
-              -- Check if pane still exists
-              local exists = vim.fn.system("tmux has-session -t " .. opencode_pane_id .. " 2>/dev/null; echo $?")
-              if vim.trim(exists) ~= "0" then
-                opencode_pane_id = nil
-              end
-            end
-
-            if opencode_pane_id then
-              vim.fn.system("tmux kill-pane -t " .. opencode_pane_id)
-              opencode_pane_id = nil
-            else
-              local pane = vim.fn.system(
-                "tmux split-window -h -l 35% -P -F '#{pane_id}' 'opencode --port " .. opencode_port .. "'"
-              )
-              opencode_pane_id = vim.trim(pane)
-            end
-          end,
-        },
-      }
-
-      vim.o.autoread = true -- Required for `opts.events.reload`
-
       -- Recommended/example keymaps
       vim.keymap.set({ "n", "x" }, "<leader>oa", function()
         require("opencode").ask("@this: ", { submit = true })
