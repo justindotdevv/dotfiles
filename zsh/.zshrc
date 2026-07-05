@@ -151,3 +151,5 @@ fi
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 [[ -f "$HOME/.daytona.completion_script.zsh" ]] && source "$HOME/.daytona.completion_script.zsh"
+
+. "$HOME/.local/share/../bin/env"

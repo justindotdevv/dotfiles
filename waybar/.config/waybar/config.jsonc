@@ -2,7 +2,7 @@
   "exclusive": true,
   "layer": "top",
   "reload_style_on_change": true,
-  "position": "top",
+  "position": "bottom",
   "margin-top": 0,
   "margin-left": 0,
   "margin-right": 0,
@@ -36,8 +36,8 @@
     // "bluetooth",
     "network",
     // "power-profiles-daemon",
-    "pulseaudio#output",
-    "battery"
+    "pulseaudio#output"
+    // "battery"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -161,7 +161,7 @@
     "format-ethernet": "󰌗",
     "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)",
-    "tooltip-format-ethernet": "Connected",
+    "tooltip-format-ethernet": "({bandwidth} GHz)",
     "tooltip-format-disconnected": "Disconnected",
     "tooltip": false,
     "interval": 3,

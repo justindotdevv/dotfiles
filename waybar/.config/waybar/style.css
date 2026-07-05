@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @background;
 }
 
 #waybar > box {
