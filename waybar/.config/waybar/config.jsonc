@@ -8,37 +8,35 @@
   "margin-right": 0,
   "margin-bottom": 0,
   "modules-left": [
-    // "custom/omarchy",
-    // "custom/separator",
     "hyprland/workspaces",
-    // "custom/separator",
-    // "cpu",
+    "hyprland/window",
     "custom/updatespacman"
-    // "temperature",
-    // "memory",
-    // "custom/separator",
-    // "idle_inhibitor",
   ],
   "modules-center": [
     "privacy",
     "custom/webcam",
-    // "mpris",
-    // "group/weather",
     "custom/voxtype",
     "custom/update",
     "custom/screenrecording-indicator",
     "clock"
   ],
   "modules-right": [
-    // "group/tray-expander",
-    // "custom/separator",
-    // "backlight",
-    // "bluetooth",
     "network",
-    // "power-profiles-daemon",
     "pulseaudio#output"
-    // "battery"
   ],
+  "hyprland/submap": {
+    "format": "<span color='#ffcc66'>  {}</span>",
+    "tooltip": false,
+    "always-on": true,
+    "default-submap": ""
+  },
+  "hyprland/window": {
+    "format": "{}  ",
+    "separate-outputs": true,
+    "icon": false,
+    "tooltip": false,
+    "max-length": 50,
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -143,8 +141,8 @@
       "format": {
         "month": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>",
-      },
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
     },
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
@@ -319,7 +317,7 @@
     "return-type": "json",
     "format-icons": {
       "has-updates": " 󰏖",
-      "updated": "",
+      "updated": ""
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --no-zero-output",
@@ -366,13 +364,6 @@
     "return-type": "json",
     "tooltip": false
   },
-  "group/weather": {
-    "orientation": "inherit",
-    "modules": [
-      // "custom/separator",
-      "custom/weather"
-    ]
-  },
   "custom/weather-separator": {
     "format": "|",
     "tooltip": false
@@ -385,10 +376,4 @@
     "signal": 9,
     "tooltip": false
   },
-  // --- Hidden but available if needed ---
-  "custom/cava": {
-    "format": "{}",
-    "exec": "~/.config/waybar/cava.sh",
-    "tooltip": false
-  }
 }

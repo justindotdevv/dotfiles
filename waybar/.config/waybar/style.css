@@ -82,6 +82,9 @@ button:hover {
   padding: 1px 4px;
 }
 
+#window,
+#submap,
+#language,
 #memory,
 #mpris,
 #custom-expand-icon,
@@ -107,6 +110,34 @@ button:hover {
   margin: 1px 3px 1px 3px;
 }
 
+#window {
+  padding: 0 8px;
+  margin: 1px 3px;
+  min-width: 30px;
+}
+
+#window.empty {
+  opacity: 0.4;
+}
+
+window#waybar.empty #window {
+  opacity: 0.4;
+}
+
+#submap {
+  color: @orange;
+  padding: 0 4px;
+  margin: 1px 2px;
+  min-width: 12px;
+  font-size: 12px;
+}
+
+#language {
+  padding: 0 4px;
+  margin: 1px 3px;
+  min-width: 12px;
+}
+
 #custom-omarchy {
   font-size: 14px;
   padding-left: 0px;
@@ -119,7 +150,7 @@ button:hover {
 }
 
 #network {
-  margin-left: 5;
+  margin-left: 5px;
 }
 
 #custom-separator,
